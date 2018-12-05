@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Bungee|Lobster|Acme');
 
 #telephone{
   color: black;
@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.btn-sm{
+.hello{
   border-radius: 0px;
   transition: background 0.125s ease 0.225s;
 }
@@ -17,11 +17,63 @@
   background: #800080;
 }
 
+#appName{
+  font-size: 2em;
+  font-family: 'Acme', sans-serif;
+  color: #800080;
+}
+
+.navbar2{
+  /* border-bottom: 1px solid #000; */
+  box-shadow: .7px 3px #eee;
+}
+
+.navbar3 *{
+  font-size: 20px;
+}
+
+.navLink1{
+  transition: border-bottom 0.1s linear 0.07s;
+}
+
+.navLink1:hover {
+  border-bottom: 4px solid #800080;
+}
+.navLink2:hover {
+  border-bottom: 4px solid #800080;
+}
+.navLink3:hover {
+  border-bottom: 4px solid #800080;
+}
+.navLink4:hover {
+  border-bottom: 4px solid #800080;
+}
+.navLink5:hover {
+  border-bottom: 4px solid #800080;
+}
+
+.footer{
+  background: #000;
+}
+
+.footerCol{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
     .firstNav{
       display: none;
+    }
+    .footerCol{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      /* align-items: center; */
     }
 }
 
