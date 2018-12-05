@@ -72,37 +72,37 @@
     <footer class="footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4 ">
+          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="footerCol">
-              <h3 class="text text-white py-3">GET IN TOUCH</h3>
-              <ul>
+              <h3 class="text text-white pt-5 pb-3 footHead">GET IN TOUCH</h3>
+              <ul style="list-style-type: none;">
                 <li class="nav-item">
                   <div class="nav-link">
-                    <i class="fa fa-phone text-white"></i>
-                    <a href="tel: 0561516436" class="">+233 54-552-6664</a>
+                    <button type="button" name="button" class="btn btn-dark transparent" style="border-radius: 50%"><i class="fa fa-phone text-white"></i></button>
+                    <a href="tel: 0561516436" class="text-light emai">+233 54-552-6664</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <div class="nav-link">
-                    <i class="fa fa-envelope text-white"></i>
-                    <a href="mailto: eben@gmail.com"class="">eben@gmail.com</a>
+                    <button type="button" name="button" class="btn btn-dark transparent" style="border-radius: 50%"><i class="fa fa-envelope text-white"></i></button>
+                    <a href="mailto: eben@gmail.com" class="text-light emai">eben@gmail.com</a>
                   </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mt-2">
                   <div class="nav-link">
-                    <button type="button" name="button" class="btn btn-primary hello"><i class="fab fa-facebook-f "></i> </button>
-                    <button type="button" name="button" class="btn btn-info hello"><i class="fab fa-twitter "></i> </button>
-                    <button type="button" name="button" class="btn btn-secondary hello"><i class="fab fa-instagram "></i> </button>
-                    <button type="button" name="button" class="btn btn-danger hello"><i class="fab fa-google "></i> </button>
+                    <button type="button" name="button" class="btn btn-dark transparent hello"><i class="fab fa-facebook-f "></i> </button>
+                    <button type="button" name="button" class="btn btn-dark transparent hello"><i class="fab fa-twitter "></i> </button>
+                    <button type="button" name="button" class="btn btn-dark transparent hello"><i class="fab fa-instagram "></i> </button>
+                    <button type="button" name="button" class="btn btn-dark transparent hello"><i class="fab fa-google "></i> </button>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="footerCol">
-              <h3 class="text text-white py-3">Pages</h3>
-              <ul class="">
+              <h3 class="text text-white pt-5  footHead">ABOUT OUR CENTER</h3>
+              <ul class="" style="list-style-type: none;">
                 <li class="nav-item"><a href="{{route('/')}}" class="nav-link footNav">Home</a> </li>
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link footNav">Services</a> </li>
                 <li class="nav-item"><a href="{{route('testimonials')}}"  class="nav-link footNav">Testimonials</a> </li>
@@ -111,7 +111,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="footerCol">
               <h3 class="text-white py-3">Map</h3>
             </div>

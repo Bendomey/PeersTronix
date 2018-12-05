@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee|Lobster|Acme');
+@import url('https://fonts.googleapis.com/css?family=Bungee|Lobster|Acme|Roboto+Condensed');
 
 #telephone{
   color: black;
@@ -11,9 +11,8 @@
 
 .hello{
   border-radius: 0px;
-  transition: background 0.125s ease 0.225s;
 }
-.btn-sm:hover{
+.hello:hover{
   background: #800080;
 }
 
@@ -53,7 +52,16 @@
 }
 
 .footer{
-  background: #000;
+  background: #242330;
+}
+
+.footNav{
+  font-size: 20px;
+  color: #fff;
+}
+
+.footNav:hover{
+  color: #800080;
 }
 
 .footerCol{
@@ -61,6 +69,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.emai:hover{
+  text-decoration: none;
+}
+
+.footHead{
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 
