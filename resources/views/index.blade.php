@@ -14,10 +14,19 @@
 
       <div class="carousel-inner" style="height: 90vh;">
         <div class="carousel-item active">
-          <img src="{{asset('images/business-camera-coffee-1509428.jpg')}}" alt="first" class="d-block w-100" style="height: 90vh;">
+          <img src="{{asset('images/business-camera-coffee-1509428.jpg')}}" alt="first" class="d-block w-100 carImg" style="height: 90vh;">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="display-4 text-light" style="font-weight: 900;">Welcome Peers Tronix Service Center</h1>
+              <p style="font-weight: 900;">We deliver quality computer repair services</p>
+            </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/achievement-agreement-arms-1068523.jpg')}}" alt="first" class="d-block w-100" style="height: 90vh;">
+          <img src="{{asset('images/achievement-agreement-arms-1068523.jpg')}}" alt="first" class="d-block w-100 carImg" style="height: 90vh;">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="displa-4 text-light" style="font-weight: 900;">A Team of Seasoned Tech Experts</h1>
+            <p style="font-weight: 900;">We have the best tech experts in the country</p>
+            <button type="button" name="button" class="btn btn-xs btn-primary">VIEW MORE <i class="fa fa-arrow-right"></i> </button>
+          </div>
         </div>
         <div class="carousel-item">
           <img src="{{asset('images/cables-close-up-computer-257736.jpg')}}" alt="third" class="d-block w-100" style="height: 90vh;">

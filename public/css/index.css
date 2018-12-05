@@ -5,3 +5,8 @@
 .offer{
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+.carImg{
+  opacity: 0.9 ;
+  backface-visibility: hidden;
+}
