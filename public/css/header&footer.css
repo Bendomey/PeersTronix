@@ -1,0 +1,41 @@
+
+
+#telephone{
+  color: black;
+}
+
+#telephone:hover{
+  color: #800080;
+  text-decoration: none;
+}
+
+.btn-sm{
+  border-radius: 0px;
+  transition: background 0.125s ease 0.225s;
+}
+.btn-sm:hover{
+  background: #800080;
+}
+
+
+/* for tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+    .firstNav{
+      display: none;
+    }
+}
+
+/* for small phones(landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .firstNav{
+    display: none;
+  }
+}
+
+
+/* for small phones (portrait) */
+@media (min-width: 320px) and (max-width: 480px)   {
+  .firstNav{
+    display: none;
+  }
+}
