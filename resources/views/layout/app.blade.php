@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/header&footer.css')}}">
+    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owlcarousel/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owlcarousel/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owlcarousel/owl.theme.green.min.css')}}">
   </head>
   <body>
 
-    <header>
+
       <!-- for header one -->
       <nav class="navbar navbar-expand-lg navbar-light firstNav" style="background:#fff;border-bottom:1px solid #eee">
         <div class="container d-flex justify-content-end">
@@ -30,7 +34,8 @@
         </div>
       </nav>
       <!-- for header two -->
-      <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar2">
+
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white navbar2">
         <div class="container py-2">
           <a class="navbar-brand" href="{{route('/')}}" id="appName">PEERS TRONIX</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +66,6 @@
           </div>
         </div>
       </nav>
-    </header>
 
 
     <main>
@@ -122,8 +126,10 @@
   </body>
   <!-- scripts for the whole application -->
   <script src="{{asset('js/jquery-3.3.1.min.js')}}" charset="utf-8"></script>
-  <script src="{{asset('js/header&footer.js')}}" charset="utf-8"></script>
+  <script src="{{asset('js/owlcarousel/owl.carousel.min.js')}}"></script>
   <script src="{{asset('js/bootstrap.min.js')}}" charset="utf-8"></script>
+  <script src="{{asset('js/header&footnoneer.js')}}" charset="utf-8"></script>
+  <script src="{{asset('js/index.js')}}" charset="utf-8"></script>
   <script src="{{asset('js/all.min.js')}}" charset="utf-8"></script>
 
 </html>
