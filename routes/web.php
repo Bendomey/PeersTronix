@@ -23,3 +23,5 @@ Route::group([],function(){
   Route::get('contactUs','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
 });
+
+Route::post('save_contact','ContactUsController@create')->name('save');

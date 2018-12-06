@@ -25,7 +25,7 @@
         <div class="col-lg-9 col-md-12 col-sm-12  justify-content-center one" >
           <div class="container">
             <h2 class="mb-5">Get in Touch</h2>
-            <form class="form" action="" method="POST">
+            <form class="form" action="{{route('save')}}" method="POST">
               <div class="row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                   <input type="text" name="full_name" value="" class="form-control form-control-lg" placeholder="Your Name*">
@@ -36,7 +36,7 @@
               </div>
               <div class="row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                  <input type="text" name="full_name" value="" class="form-control form-control-lg" placeholder="Your Name*">
+                  <input type="text" name="service_needed" value="" class="form-control form-control-lg" placeholder="Service Needed*">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <input type="tel" name="phone" value="" class="form-control form-control-lg" placeholder="Your Phone*">
