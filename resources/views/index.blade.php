@@ -26,7 +26,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h1 class="displa-4 text-light" style="font-weight: 900;">A Team of Seasoned Tech Experts</h1>
             <p style="font-weight: 900;">We have the best tech experts in the country</p>
-            <button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button>
+            <a href="#OurTeam"><button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button></a>
           </div>
         </div>
         <div class="carousel-item">
@@ -34,7 +34,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h1 class="displa-4 text-light" style="font-weight: 900;">Professional Customer Service</h1>
             <p style="font-weight: 900;">We provide extensive support for every customer</p>
-            <button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button>
+            <a href="#"><button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button></a>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
     <h1 class="display-4 text-center offer">WHAT WE OFFER</h1>
     <!-- owl carousel -->
     <div class="container-fluid">
-      <div class="owl-carousel owl-theme">
+      <div class="owl-carousel owl-theme hi">
         <div class="item">
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" alt="first" src="{{asset('images/laptopRepair.jpg')}}">
@@ -102,8 +102,80 @@
         </div>
       </div>
     </div>
+  </section>
 
-
+  <section class="mb-5" id="OurTeam">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="container">
+            <h1 class="offer mb-3 display-4">OUR TEAM</h1>
+            <h6 class="text-primary">PROFESSIONAL PC REPAIR TEAM</h6>
+            <p style="color: grey">Since our establishment, we have gathered a team of dedicated PC repair professionals.</p>
+            <div class="">
+              <a href="{{route('contact_us')}}"> <button type="button" name="button" class="btn btn-lg btn-light mess" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-envelope"></i> </button></a>
+              <button type="button" name="button" class="btn btn-lg btn-light" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-arrow-left"></i> </button>
+              <button type="button" name="button" class="btn btn-lg btn-light" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-arrow-right"></i> </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-6 col-sm-6">
+          <div class="owl-carousel owl-theme hm">
+            <div class="item">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" alt="first" src="{{asset('images/adult-beard-blur-927022.jpg')}}">
+                <div class="card-body">
+                  <h4 class="card-title">John Doe</h4>
+                  <p class="card-text">
+                    General Manager
+                  </p>
+                </div>
+                <div class="d-flex justify-content-around">
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" alt="first" src="{{asset('images/beautiful-blur-casual-935756.jpg')}}">
+                <div class="card-body">
+                  <h4 class="card-title">Jane Doe</h4>
+                  <p class="card-text">
+                    Customer Service Manager
+                  </p>
+                </div>
+                <div class="d-flex justify-content-around">
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" alt="first" src="{{asset('images/business-care-clinic-1282308.jpg')}}">
+                <div class="card-body">
+                  <h4 class="card-title">Jack Doe</h4>
+                  <p class="card-text">
+                    Field Technician
+                  </p>
+                </div>
+                <div class="d-flex justify-content-around">
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
+                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 

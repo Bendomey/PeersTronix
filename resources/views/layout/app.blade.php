@@ -18,7 +18,7 @@
       <nav class="navbar navbar-expand-lg navbar-light firstNav" style="background:#fff;border-bottom:1px solid #eee">
         <div class="container d-flex justify-content-end">
           <ul class="navbar-nav">
-            <li class="nav-item active pr-5 pt-1">
+            <li class="nav-item ar affordable Laptop repair services to individuals and corporate clictive pr-5 pt-1">
               <span style="color:#800080"><i class="fa fa-phone"></i></span> <a href="tel: 0545526664" id="telephone" >+233 54-552-6664</a>
             </li>
             <li class="nav-item pr-5 pt-1">
@@ -56,7 +56,7 @@
                   <a href="{{route('testimonials')}}" class="nav-link navLink3 text-dark">Testimonials</a>
                 </li>
                 <li class="nav-item ">
-                  <a href="{{route('team')}}" class="nav-link navLink4 text-dark">Team</a>
+                  <a href="#OurTeam" class="nav-link navLink4 text-dark">Team</a>
                 </li>
                 <li class="nav-item ">
                   <a href="{{route('contact_us')}}" class="nav-link navLink5 text-dark">Contact Us</a>
