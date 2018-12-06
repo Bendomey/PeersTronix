@@ -20,7 +20,7 @@ Route::group([],function(){
   Route::get('/', 'ViewController@index')->name('/');
   Route::get('testimonials','ViewController@testimonials')->name('testimonials');
   Route::get('team','ViewController@team')->name('team');
-  Route::get('contactUs','ViewController@contactUs')->name('contact_us');
+  Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
 });
 
