@@ -77,8 +77,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="footerCol">
-              <h3 class="text text-white pt-5 pb-3 footHead">GET IN TOUCH</h3>
+            <div class="footerCol mt-5 mb-3">
+              <h3 class="text text-white footHead">GET IN TOUCH</h3>
               <ul style="list-style-type: none;">
                 <li class="nav-item">
                   <div class="nav-link">

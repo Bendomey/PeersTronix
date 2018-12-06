@@ -79,6 +79,10 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.one{
+  border-right: 1px solid #eee;
+}
+
 
 /* for tablets */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
@@ -91,12 +95,19 @@
       justify-content: start;
       /* align-items: center; */
     }
+
+    .one{
+      border-right: none;
+    }
 }
 
 /* for small phones(landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
   .firstNav{
     display: none;
+  }
+  .one{
+    border-right: none;
   }
 }
 
@@ -105,5 +116,8 @@
 @media (min-width: 320px) and (max-width: 480px)   {
   .firstNav{
     display: none;
+  }
+  .one{
+    border-right: none;
   }
 }

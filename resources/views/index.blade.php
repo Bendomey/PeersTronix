@@ -18,7 +18,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h1 class="display-4 text-light" style="font-weight: 900;">Welcome Peers Tronix Service Center</h1>
               <p style="font-weight: 900;">We deliver quality computer repair services</p>
-              <button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button>
+              <a href="{{route('services')}}"> <button type="button" name="button" class="btn btn-lg btn-primary" style="border-radius:0px">VIEW MORE <i class="fa fa-arrow-right"></i> </button></a>
             </div>
         </div>
         <div class="carousel-item">

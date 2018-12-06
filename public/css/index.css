@@ -10,3 +10,18 @@
   opacity: 0.9 ;
   backface-visibility: hidden;
 }
+
+.breadcrumb-dot .breadcrumb-item+.breadcrumb-item::before {
+    content: "•";
+    color: #408080;
+}
+
+.form-control-lg, .form-control{
+  border-radius: 0px;
+  border-color: #efeded;
+
+}
+
+.subit{
+  background: #800080;
+}
