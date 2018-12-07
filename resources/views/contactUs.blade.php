@@ -20,6 +20,13 @@
 
 
   <section class="mb-5">
+    @if (Session::has('success'))
+    <div class="alert alert-success">
+        <ul class="list-style-none d-flex justif-content-center">
+            <li>{!! Session::get('success') !!}</li>
+        </ul>
+    </div>
+    @endif
     <div class="container">
       <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12  justify-content-center one" >
