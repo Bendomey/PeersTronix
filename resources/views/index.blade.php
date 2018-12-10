@@ -60,7 +60,7 @@
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" alt="first" src="{{asset('images/laptopRepair.jpg')}}">
             <div class="card-body">
-              <h4 class="card-title">Laptop Repair</h4>
+              <h4 class="card-title profession">Laptop Repair</h4>
               <p class="card-text">
                 We offer affordable Laptop repair services to individuals and corporate clients.
               </p>
@@ -71,7 +71,7 @@
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" alt="first" src="{{asset('images/networkRepair.jpg')}}">
             <div class="card-body">
-              <h4 class="card-title">Network Support</h4>
+              <h4 class="card-title profession">Network Support</h4>
               <p class="card-text">
                 We provide extensive 24/7 remote support via netowrks to our customers
               </p>
@@ -82,7 +82,7 @@
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" alt="first" src="{{asset('images/dataRepair.jpg')}}">
             <div class="card-body">
-              <h4 class="card-title">Data Recovery</h4>
+              <h4 class="card-title profession">Data Recovery</h4>
               <p class="card-text">
                 We offer affordable Laptop repair services to individuals and corporate clients.
               </p>
@@ -93,12 +93,17 @@
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" alt="first" src="{{asset('images/dataRepair.jpg')}}">
             <div class="card-body">
-              <h4 class="card-title">Data Recovery</h4>
+              <h4 class="card-title profession">Data Recovery</h4>
               <p class="card-text">
                 We offer affordable Laptop repair services to individuals and corporate clients.
               </p>
             </div>
           </div>
+        </div>
+        <div class="owl-dots">
+          <div class="owl-dot active"><span></span></div>
+          <div class="owl-dot"><span></span></div>
+          <div class="owl-dot"><span></span></div>
         </div>
       </div>
     </div>
@@ -110,7 +115,7 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="container">
             <h1 class="offer mb-3 display-4">OUR TEAM</h1>
-            <h6 class="text-primary">PROFESSIONAL PC REPAIR TEAM</h6>
+            <h6 class="profession">PROFESSIONAL PC REPAIR TEAM</h6>
             <p style="color: grey">Since our establishment, we have gathered a team of dedicated PC repair professionals.</p>
             <div class="">
               <a href="{{route('contact_us')}}"> <button type="button" name="button" class="btn btn-lg btn-light mess" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-envelope"></i> </button></a>
@@ -126,7 +131,7 @@
                 <img class="card-img-top" alt="first" src="{{asset('images/adult-beard-blur-927022.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
-                  <p class="card-text">
+                  <p class="card-text profession">
                     General Manager
                   </p>
                 </div>
@@ -143,7 +148,7 @@
                 <img class="card-img-top" alt="first" src="{{asset('images/beautiful-blur-casual-935756.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">Jane Doe</h4>
-                  <p class="card-text">
+                  <p class="card-text profession">
                     Customer Service Manager
                   </p>
                 </div>
@@ -160,7 +165,7 @@
                 <img class="card-img-top" alt="first" src="{{asset('images/business-care-clinic-1282308.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">Jack Doe</h4>
-                  <p class="card-text">
+                  <p class="card-text profession">
                     Field Technician
                   </p>
                 </div>

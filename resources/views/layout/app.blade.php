@@ -36,7 +36,7 @@
       <!-- for header two -->
 
       <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white navbar2">
-        <div class="container py-1">
+        <div class="container">
           <a class="navbar-brand" href="{{route('/')}}" id="appName">PEERS TRONIX</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,7 @@
                   <a href="{{route('testimonials')}}" class="nav-link navLink3 text-dark">Testimonials</a>
                 </li>
                 <li class="nav-item ">
-                  <a href="#OurTeam" class="nav-link navLink4 text-dark">Team</a>
+                  <a href="{{route('team')}}" class="nav-link navLink4 text-dark">Team</a>
                 </li>
                 <li class="nav-item ">
                   <a href="{{route('contact_us')}}" class="nav-link navLink5 text-dark">Contact Us</a>
@@ -75,7 +75,7 @@
 
     <footer class="footer">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="border-bottom: 1px solid ">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="footerCol mt-5 mb-3">
               <h3 class="text text-white footHead">GET IN TOUCH</h3>
@@ -121,6 +121,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row d-flex justify-content-center" style="background: #2f353f;">
+          <span class="text text-light py-3">Copyright (c) 2018 <a href="{{route('/')}}"><i style="color: #800080;">PeersTronix</i></a> All Rights Reserved.</span>
       </div>
     </footer>
   </body>
