@@ -25,6 +25,7 @@
 .subit{
   background: #800080;
 }
+  font-family: 'Roboto Condensed', sans-serif;
 
 .profession{
   color: #800080;
@@ -39,4 +40,13 @@ transition:all .4s linear;
 -ms-transform:scale(1.1);
 -webkit-transform:scale(1.1);
 transform:scale(1.1);
+}
+
+.servi {
+  border-bottom: 1px solid #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.servi:hover {
+  border-bottom: 1px solid #800080;
 }

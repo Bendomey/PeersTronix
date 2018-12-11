@@ -36,25 +36,25 @@
               @csrf
               <div class="row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                  <input type="text" name="full_name" value="" class="form-control form-control-lg" placeholder="Your Name*" required>
+                  <input type="text" name="full_name" value="" class="form-control p-4" placeholder="Your Name*" required>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                  <input type="email" name="email" value="" class="form-control form-control-lg" placeholder="Your Email*" required>
+                  <input type="email" name="email" value="" class="form-control p-4" placeholder="Your Email*" required>
                 </div>
               </div>
               <div class="row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                  <input type="text" name="service_needed" value="" class="form-control form-control-lg" placeholder="Service Needed*" required>
+                  <input type="text" name="service_needed" value="" class="form-control p-4" placeholder="Service Needed*" required>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                  <input type="tel" name="phone" value="" class="form-control form-control-lg" placeholder="Your Phone*" required>
+                  <input type="tel" name="phone" value="" class="form-control p-4" placeholder="Your Phone*" required>
                 </div>
               </div>
               <div class="row mb-4">
-                <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+                <textarea name="message" rows="5" class="form-control p-4" placeholder="Your Message" required></textarea>
               </div>
               <div class="row">
-                <button type="submit" name="button" class="btn text-light btn-block subit">SUBMIT</button>
+                <button type="submit" name="button" class="btn text-light btn-block subit py-3">SUBMIT</button>
               </div>
             </form>
           </div>
