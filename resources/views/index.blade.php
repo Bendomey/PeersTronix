@@ -128,7 +128,7 @@
           <div class="owl-carousel owl-theme hm">
             <div class="item">
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" alt="first" src="{{asset('images/adult-beard-blur-927022.jpg')}}">
+                <img class="card-img-top teamImg" alt="first" src="{{asset('images/adult-beard-blur-927022.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">John Doe</h4>
                   <p class="card-text profession">
@@ -145,7 +145,7 @@
             </div>
             <div class="item">
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" alt="first" src="{{asset('images/beautiful-blur-casual-935756.jpg')}}">
+                <img class="card-img-top teamImg" alt="first" src="{{asset('images/beautiful-blur-casual-935756.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">Jane Doe</h4>
                   <p class="card-text profession">
@@ -162,7 +162,7 @@
             </div>
             <div class="item">
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" alt="first" src="{{asset('images/business-care-clinic-1282308.jpg')}}">
+                <img class="card-img-top teamImg" alt="first" src="{{asset('images/business-care-clinic-1282308.jpg')}}">
                 <div class="card-body">
                   <h4 class="card-title">Jack Doe</h4>
                   <p class="card-text profession">

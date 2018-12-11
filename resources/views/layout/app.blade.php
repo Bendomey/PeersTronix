@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/owlcarousel/owl.theme.green.min.css')}}">
   </head>
   <body>
+    <!-- <div class="se-pre-con"></div> -->
 
 
       <!-- for header one -->
@@ -129,6 +130,7 @@
   </body>
   <!-- scripts for the whole application -->
   <script src="{{asset('js/jquery-3.3.1.min.js')}}" charset="utf-8"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
   <script src="{{asset('js/owlcarousel/owl.carousel.min.js')}}"></script>
   <script src="{{asset('js/bootstrap.min.js')}}" charset="utf-8"></script>
   <script src="{{asset('js/header&footnoneer.js')}}" charset="utf-8"></script>

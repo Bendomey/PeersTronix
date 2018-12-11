@@ -5,7 +5,7 @@
 
   <section class="mb-5">
     <div class="carousel-inner">
-      <img src="{{asset('images/contactUs.jpg')}}" class="w-100 mb-0" height="250vh" alt="">
+      <img src="{{asset('images/contactUs.jpg')}}" class="w-100 mb-0" height="260vh" alt="">
       <div class="carousel-caption d-flex flex-direction-column justify-content-center">
         <h1 class="text-light" style="font-weight: 900">CONTACT US</h1>
       </div>

@@ -29,3 +29,14 @@
 .profession{
   color: #800080;
 }
+
+.teamImg{
+  -webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.teamImg:hover{
+-ms-transform:scale(1.1);
+-webkit-transform:scale(1.1);
+transform:scale(1.1);
+}

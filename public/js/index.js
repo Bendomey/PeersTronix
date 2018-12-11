@@ -1,4 +1,9 @@
-
+// 
+//
+// $(window).load(function() {
+// 		// Animate loader off screen
+// 		$(".se-pre-con").fadeOut("slow");;
+// 	});
 $(document).ready(function(){
 
   $("[class='owl-carousel owl-theme hi']").owlCarousel({
