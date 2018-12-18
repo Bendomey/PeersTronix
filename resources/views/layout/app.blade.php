@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Peers Tronix</title>
+    <title>Peers Tronix  | @yield('title','Home Page')</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/header&footer.css')}}">

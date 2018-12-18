@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('title','Contact US')
 @section('content')
 
 
