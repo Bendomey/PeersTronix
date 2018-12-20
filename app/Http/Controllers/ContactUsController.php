@@ -11,15 +11,7 @@ class ContactUsController extends Controller
     public function createContact(Request $req) {
       // save details of  people (contact us)
 
-      // $contact = ContactUs::create([
-      //   'full_name' => $req['full_name'],
-      //   'email' => $req['email'],
-      //   'service_needed' => $req['service_needed'],
-      //   'phone' => $req['phone'],
-      //   'message' => $req['message']
-      // ]);
-
-      ContactUs::create($req->all());
+      ContactUs::create($req->only(['full_name','email','service_needed','phone','message']));
       return back()->with('success','Your request has been succesfully sent');
     }
 }
