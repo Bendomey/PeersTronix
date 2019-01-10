@@ -42,7 +42,7 @@
         </div>
         <div class="row mb-lg-3 mb-md-3 mb-sm-3">
           <div class="col-lg-6 col-md-6 col-sm-12 mb-2 mb-sm-3">
-            <input type="text" name="company_name" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Company Name*" required>
+            <input type="text" name="company_name" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Company Name" required>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
             <input type="tel" name="phone" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Your Phone*" required>

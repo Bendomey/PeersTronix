@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="js-parallax u-promo-block" style="background-image: url(images/2.jpg); background-size: 100% 100%">
+<section class="js-parallax u-promo-block" style="background-image: url(images/imagescd60.jpg); background-size: ">
       <div class="container text-white u-ver-center u-content-space">
         <div class="row justify-content-center">
           <div class="col-12">
