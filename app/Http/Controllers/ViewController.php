@@ -16,8 +16,8 @@ class ViewController extends Controller
     return view('testimonials');
   }
 
-  public function team(){
-    return view('team');
+  public function about_us(){
+    return view('about_us');
   }
 
   public function contactUs(){
@@ -26,6 +26,10 @@ class ViewController extends Controller
 
   public function services(){
     return view('services');
+  }
+
+  public function single_product(){
+    return view('single_product');
   }
 
 

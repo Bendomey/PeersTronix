@@ -1,0 +1,17 @@
+.one{
+  border-right: 1px solid #eee;
+}
+
+.breadcrumb-dot .breadcrumb-item+.breadcrumb-item::before {
+    content: "•";
+    color: #408080;
+}
+
+.footerLink{
+  transition: 0.225s linear 0.225s;
+}
+
+.footerLink:hover{
+  margin-left: 1vw;
+  transition: 0.225s linear 0.225s;
+}
