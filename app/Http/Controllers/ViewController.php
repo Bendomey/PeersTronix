@@ -28,6 +28,10 @@ class ViewController extends Controller
     return view('services');
   }
 
+  public function products(){
+    return view('products');
+  }
+
   public function single_product(){
     return view('single_product');
   }

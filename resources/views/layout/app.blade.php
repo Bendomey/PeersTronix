@@ -28,7 +28,7 @@
 					<ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
 					  <li class="nav-item active"> <a class="nav-link" href="{{route('/')}}"><i class="fas fa-home mr-1"></i>Home </a> </li>
             <li class="nav-item"> <a class="nav-link" href="{{route('services')}}"><i class="fas fa-cube mr-1"></i>Services</a> </li>
-					  <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-cube mr-1"></i>Shop</a> </li>
+					  <li class="nav-item"> <a class="nav-link" href="{{route('products')}}"><i class="fas fa-cube mr-1"></i>Shop</a> </li>
 						<li class="nav-item"> <a class="nav-link " href="{{route('about_us')}}"><i class="fas fa-user-alt mr-1"></i>About Us <span class="sr-only">(current)</span></a> </li>
 					  <li class="nav-item"> <a class="nav-link" href="{{route('contact_us')}}"><i class="fas fa-phone mr-1"></i>Contact Us</a> </li>
 					</ul>
@@ -85,7 +85,7 @@
             <a href="{{route('/')}}" class="text-white text-decoration-none footerLink">Home</a>
           </p>
           <p>
-            <a href="#" class="text-white text-decoration-none text-decoration-none footerLink">Shop</a>
+            <a href="{{route('products')}}" class="text-white text-decoration-none text-decoration-none footerLink">Shop</a>
           </p>
           <p>
             <a href="{{route('about_us')}}" class="text-white text-decoration-none footerLink">About Us</a>
@@ -123,7 +123,7 @@
 
           <!--Copyright-->
           <p class="text-center text-md-left">© 2018 Copyright:
-            <a href="PeersTronix.html text-white">
+            <a href="{{route('/')}}" >
               <strong> PeersTronix</strong>
             </a>
           </p>
