@@ -25,11 +25,24 @@
               <div class="body">
                   <div class="row">
                       <div class="col-7">
-                          <h5 class="m-t-0">Traffic</h5>
-                          <p class="text-small">4% higher than last month</p>
+                          <h5 class="m-t-0">Bookings</h5>
+                          <p class="text-small">Requests Recieved From Clients</p>
                       </div>
                       <div class="col-5 text-right">
-                          <h2 class="">20</h2>
+                          <h2 class="">{{$bookings}}</h2>
+                      </div>
+                  </div>
+              </div>
+          </li>
+          <li class="col-lg-3 col-md-6 col-sm-12">
+              <div class="body">
+                  <div class="row">
+                      <div class="col-7">
+                          <h5 class="m-t-0">Bookings Affirmed</h5>
+                          <p class="text-small">Total Bookings Affirmed</p>
+                      </div>
+                      <div class="col-5 text-right">
+                          <h2 class="">39</h2>
                       </div>
                   </div>
               </div>
@@ -39,23 +52,10 @@
                   <div class="row">
                       <div class="col-7">
                           <h5 class="m-t-0">Sales</h5>
-                          <p class="text-small">6% higher than last month</p>
+                          <p class="text-small">Sales For This Month</p>
                       </div>
                       <div class="col-5 text-right">
                           <h2 class="">12%</h2>
-                      </div>
-                  </div>
-              </div>
-          </li>
-          <li class="col-lg-3 col-md-6 col-sm-12">
-              <div class="body">
-                  <div class="row">
-                      <div class="col-7">
-                          <h5 class="m-t-0">Email</h5>
-                          <p class="text-small">Total Registered email</p>
-                      </div>
-                      <div class="col-5 text-right">
-                          <h2 class="">39</h2>
                       </div>
                   </div>
               </div>

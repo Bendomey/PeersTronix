@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Contact;
 
@@ -13,7 +14,8 @@ class DashboardController extends Controller
     }
 
     public function index(){
-      return view('dashboard.index');
+      $bookings = Contact::all()->count();
+      return view('dashboard.index')->with(['bookings' => $bookings]);
     }
 
     public function profile_view(){

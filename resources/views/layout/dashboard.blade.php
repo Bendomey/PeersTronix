@@ -129,7 +129,7 @@
                     </div>
                 </li>
                 <li class="header">MAIN</li>
-                <li class="active open"> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                <li class="active open"> <a href="{{route('dashboard')}}" class=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                 <li> <a href="{{route('dashboard/bookings')}}"><i class="zmdi zmdi-eye"></i><span>Bookings</span></a></li>
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
@@ -171,7 +171,7 @@
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
     <script src="{{asset('js/all.min.js')}}"></script>
-    
+
 
     <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>
     <script src="{{asset('assets/js/pages/index.js')}}"></script>
