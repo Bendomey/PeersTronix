@@ -8,8 +8,10 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/color_skins.css')}}">
@@ -128,7 +130,7 @@
                 </li>
                 <li class="header">MAIN</li>
                 <li class="active open"> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-eye"></i><span>Bookings</span></a></li>
+                <li> <a href="{{route('dashboard/bookings')}}"><i class="zmdi zmdi-eye"></i><span>Bookings</span></a></li>
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
                         <li><a href="#">Add Product</a></li>
@@ -159,6 +161,17 @@
     <script src="{{asset('assets/bundles/jvectormap.bundle.js')}}"></script> <!-- JVectorMap Plugin Js -->
     <script src="{{asset('assets/bundles/knob.bundle.js')}}"></script> <!-- Jquery Knob Plugin Js -->
     <script src="{{asset('assets/bundles/sparkline.bundle.js')}}"></script> <!-- Sparkline Plugin Js -->
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="{{asset('assets/bundles/datatablescripts.bundle.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+    <script src="{{asset('js/all.min.js')}}"></script>
+    
 
     <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>
     <script src="{{asset('assets/js/pages/index.js')}}"></script>

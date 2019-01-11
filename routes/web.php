@@ -29,6 +29,7 @@ Route::group([],function(){
 Route::group([],function(){
   Route::get('dashboard','DashboardController@index')->name('dashboard');
   Route::get('dashboard/profile','DashboardController@profile_view')->name('dashboard/profile');
+  Route::get('dashboard/bookings','DashboardController@booking_view')->name('dashboard/bookings');
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');

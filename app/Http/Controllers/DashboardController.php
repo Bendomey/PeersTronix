@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
 
 class DashboardController extends Controller
 {
@@ -17,5 +18,10 @@ class DashboardController extends Controller
 
     public function profile_view(){
       return view('dashboard.profile');
+    }
+
+    public function booking_view(){
+      $all_booking = Contact::all();
+      return view('dashboard/bookings',compact('all_booking'));
     }
 }
