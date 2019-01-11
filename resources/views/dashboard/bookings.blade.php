@@ -51,7 +51,10 @@
                                     <td>{{$booking->customer_email}}</td>
                                     <td>{{$booking->customer_phone}}</td>
                                     <td>{{$booking->message}}</td>
-                                    <td><button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button> </td>
+                                    <td>
+                                      <button class="btn btn-success"><i class="fa fa-check"></i> Attend</button>
+                                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    </td>
                                     @endforeach
                                   @else
 
