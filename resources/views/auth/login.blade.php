@@ -17,7 +17,7 @@
 </nav>
 <!-- End Navbar -->
 <div class="page-header">
-    <div class="page-header-image" style="background-image:url(assets/images/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:url(images/imagescd60.jpg)"></div>
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">

@@ -6,7 +6,7 @@
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link btn btn-primary btn-round mt-1" href="{{route('dashboard')}}">HOME</a>                  
+                  <a class="nav-link" href="{{route('dashboard')}}">Home</a>                  
                 </li>
             </ul>
         </div>
@@ -14,7 +14,7 @@
 </nav>
 <!-- End Navbar -->
 <div class="page-header">
-    <div class="page-header-image" style="background-image:url(assets/images/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:url(images/imagescd60.jpg)"></div>
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">
@@ -30,37 +30,37 @@
                     <div class="content">
                         <div class="input-group">
                             <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Enter User Name" value="{{ old('name') }}" name="name" required autofocus>
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                            @endif
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-account-circle"></i>
                             </span>
                         </div>
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong style="color: red; font-size: 0.8rem">{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
                         <div class="input-group">
                             <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Enter Email" value="{{ old('email') }}" name="email" required>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-email"></i>
                             </span>
                         </div>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong style="color: red; font-size: 0.8rem">{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                         <div class="input-group">
                             <input type="password" placeholder="Password{{ $errors->has('password') ? ' is-invalid' : '' }}" class="form-control" value="{{ old('name') }}" name="password" required>
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-lock"></i>
                             </span>
                         </div>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong style="color: red; font-size: 0.8rem">{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
                         <div class="input-group">
                             <input type="password" placeholder="Confirm Password" class="form-control" name="password_confirmation" required>
                             <span class="input-group-addon">
