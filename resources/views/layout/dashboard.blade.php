@@ -164,5 +164,6 @@
 
     <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>
     <script src="{{asset('assets/js/pages/index.js')}}"></script>
+    <script src="{{asset('js/dashboard.js')}}" charset="utf-8"></script>
   </body>
 </html>

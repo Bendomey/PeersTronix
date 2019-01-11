@@ -34,5 +34,6 @@ Route::group([],function(){
 Route::post('save_contact','ContactUsController@createContact')->name('save');
 
 Auth::routes();
+Route::get('logout','Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

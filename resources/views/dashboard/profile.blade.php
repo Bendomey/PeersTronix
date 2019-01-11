@@ -69,16 +69,23 @@
                           <h2><strong>Account</strong> Settings</h2>
                       </div>
                       <div class="body">
-                        <div class="form-group">
-                            <input type="text" class="form-control" value="" required readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" value="" required readonly>
-                        </div>
-                        <div class="col-md-12">
-                          <button class="btn btn-primary btn-round">Save Changes</button>
-                            <button class="btn btn-primary btn-round">Save Changes</button>
-                        </div>
+                        <form class="form" action="#" method="post">
+                          @csrf
+                          <label for="full name">Full Name</label>
+                          <div class="form-group">
+                              <input type="text" class="form-control" value="" required readonly>
+                          </div>
+                          <label for="email">Email</label>
+                          <div class="form-group">
+                              <input type="email" class="form-control" value="" required readonly>
+                          </div>
+                          <label for="contact">Contact</label>
+                          <div class="form-group">
+                              <input type="tel" class="form-control" value="" required readonly>
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-round saveAccSetting">Save Changes</button>
+                        </form>
+                        <button class="btn btn-info btn-round editAccSetting">Edit</button>
                       </div>
                   </div>
                   <div class="card">
@@ -86,13 +93,16 @@
                           <h2><strong>Security</strong> Settings</h2>
                       </div>
                       <div class="body">
+                        <form class="form" action="#" method="post">
+                          @csrf
                           <div class="form-group">
-                              <input type="password" class="form-control" placeholder="Current Password">
+                              <input type="password" name="" class="form-control currentPass" placeholder="Current Password" required>
                           </div>
                           <div class="form-group">
-                              <input type="password" class="form-control" placeholder="New Password">
+                              <input type="password" name="" class="form-control newPass" placeholder="New Password" required>
                           </div>
-                          <button class="btn btn-primary btn-round">Save Changes</button>
+                          <button class="btn btn-primary btn-round saveSecSetting">Save Changes</button>
+                        </form>
                       </div>
                   </div>
               </div>
