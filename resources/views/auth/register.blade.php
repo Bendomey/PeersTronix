@@ -6,7 +6,7 @@
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('dashboard')}}">Home</a>                  
+                  <a class="nav-link" href="{{route('dashboard')}}">Home</a>
                 </li>
             </ul>
         </div>
@@ -48,6 +48,17 @@
                         @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
                                 <strong style="color: red; font-size: 0.8rem">{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                        <div class="input-group">
+                            <input type="text" class="form-control{{ $errors->has('position') ? ' is-invalid' : '' }}" placeholder="Enter Position" value="{{ old('position') }}" name="position" required>
+                            <span class="input-group-addon">
+                                <i class="zmdi zmdi-account"></i>
+                            </span>
+                        </div>
+                        @if ($errors->has('position'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong style="color: red; font-size: 0.8rem">{{ $errors->first('position') }}</strong>
                             </span>
                         @endif
                         <div class="input-group">

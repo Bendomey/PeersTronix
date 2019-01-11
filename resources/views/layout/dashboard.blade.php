@@ -118,8 +118,8 @@
                     <div class="user-info">
                         <div class="image"><a href="{{route('dashboard/profile')}}"><img src="{{asset('assets/images/profile_av.jpg')}}" alt="User"></a></div>
                         <div class="detail">
-                            <h4>Michael</h4>
-                            <small>General Manager</small>
+                            <h4>{{Auth::user()->name}}</h4>
+                            <small>{{Auth::user()->position}}</small>
                         </div>
                         <a href="{{route('dashboard/profile')}}" title="Profile"><i class="zmdi zmdi-account"></i></a>
                         <a href="{{route('register')}}" title="Add Account"><i class="zmdi zmdi-plus"></i><i class="zmdi zmdi-account"></i></a>
@@ -128,14 +128,11 @@
                 </li>
                 <li class="header">MAIN</li>
                 <li class="active open"> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span> </a>
+                <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
-                        <li><a href="mail-inbox.html">Inbox</a></li>
-                        <li><a href="chat.html">Chat</a></li>
-                        <li><a href="events.html">Calendar</a></li>
-    					          <li><a href="file-dashboard.html">File Manager</a></li>
-                        <li><a href="contact.html">Contact list</a></li>
-                        <li><a href="blog-dashboard.html">Blog</a></li>
+                        <li><a href="#">Add Product</a></li>
+                        <li><a href="#">View Products</a></li>
+                        <li><a href="#">Edit Products</a></li>
                     </ul>
                 </li>
             </ul>

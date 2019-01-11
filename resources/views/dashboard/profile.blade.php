@@ -23,7 +23,7 @@
       <div class="col-lg-4 col-md-12">
           <div class="card member-card">
               <div class="header l-purple">
-                  <h4 class="m-t-10">Michael Dorsey</h4>
+                  <h4 class="m-t-10">{{Auth::user()->name}}</h4>
               </div>
               <div class="member-img">
                   <img src="{{asset('assets/images/profile_av.jpg')}}" class="rounded-circle" alt="profile-image">
@@ -46,11 +46,19 @@
               </ul>
               <div class="tab-content">
                   <div class="tab-pane body active" id="about">
+                      <small class="text-muted">Position: </small>
+                      <p>{{Auth::user()->position}}</p>
+                      <hr>
                       <small class="text-muted">Email address: </small>
-                      <p>michael@gmail.com</p>
+                      <p>{{Auth::user()->email}}</p>
                       <hr>
                       <small class="text-muted">Phone: </small>
-                      <p>+ 202-555-0191</p>
+                      <p>
+                        @if(Auth::user()->contact == null)
+                          <i>Null</i>
+                        @endif
+                        {{Auth::user()->contact}}
+                      </p>
                   </div>
               </div>
           </div>
@@ -73,15 +81,19 @@
                           @csrf
                           <label for="full name">Full Name</label>
                           <div class="form-group">
-                              <input type="text" class="form-control" value="" required readonly>
+                              <input type="text" class="form-control" value="{{Auth::user()->name}}" required readonly>
                           </div>
                           <label for="email">Email</label>
                           <div class="form-group">
-                              <input type="email" class="form-control" value="" required readonly>
+                              <input type="email" class="form-control" value="{{Auth::user()->email}}" required readonly>
+                          </div>
+                          <label for="contact">Position</label>
+                          <div class="form-group">
+                              <input type="text" class="form-control" value="{{Auth::user()->position}}" required readonly>
                           </div>
                           <label for="contact">Contact</label>
                           <div class="form-group">
-                              <input type="tel" class="form-control" value="" required readonly>
+                              <input type="tel" class="form-control" value="{{Auth::user()->contact}}" required readonly>
                           </div>
                           <button type="submit" class="btn btn-primary btn-round saveAccSetting">Save Changes</button>
                         </form>
