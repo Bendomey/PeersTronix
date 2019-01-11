@@ -26,6 +26,11 @@ Route::group([],function(){
   Route::get('single_product','ViewController@single_product')->name('single_product');
 });
 
+Route::group([],function(){
+  Route::get('dashboard','DashboardController@index')->name('dashboard');
+  Route::get('dashboard/profile','DashboardController@profile_view')->name('dashboard/profile');
+});
+
 Route::post('save_contact','ContactUsController@createContact')->name('save');
 
 Auth::routes();

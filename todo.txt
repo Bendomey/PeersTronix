@@ -1,1 +1,3 @@
 - fix the collapse in the serices Page
+- font for the single_porduct name
+- in the single_product do the description and reviews tab
