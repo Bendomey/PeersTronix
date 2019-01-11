@@ -7,11 +7,6 @@ $(document).ready(function() {
   // collapse
   $("[class='collapse show']").collapse();
 
-  $('.cardPro').hover(function(){
-    $('.cardPro').addClass('shadow');
-  },function(){
-    $('.cardPro').removeClass('shadow');
-  }
-);
+
 
 });
