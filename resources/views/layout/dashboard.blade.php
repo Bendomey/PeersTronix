@@ -105,7 +105,7 @@
                         <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
                     </ul>
                 </li>
-                <li><a href="sign-in.html" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a></li>
+                <li><a href="{{route('logout')}}" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a></li>
                 <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
             </ul>
         </div>
@@ -123,7 +123,7 @@
                         </div>
                         <a href="{{route('dashboard/profile')}}" title="Profile"><i class="zmdi zmdi-account"></i></a>
                         <a href="{{route('register')}}" title="Add Account"><i class="zmdi zmdi-plus"></i><i class="zmdi zmdi-account"></i></a>
-                        <a href="{{route('dashboard')}}" title="Sign out"><i class="zmdi zmdi-power"></i></a>
+                        <a href="{{route('logout')}}" title="Sign out"><i class="zmdi zmdi-power"></i></a>
                     </div>
                 </li>
                 <li class="header">MAIN</li>

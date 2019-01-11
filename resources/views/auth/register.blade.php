@@ -1,16 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<nav class="navbar navbar-expand-lg mt-1 navbar-transparent">
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
     <div class="container">
-
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('/')}}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary btn-round" href="{{route('login')}}">SIGN IN</a>
+                  <a class="nav-link btn btn-primary btn-round mt-1" href="{{route('dashboard')}}">HOME</a>                  
                 </li>
             </ul>
         </div>
