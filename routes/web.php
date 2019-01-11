@@ -31,7 +31,7 @@ Route::group([],function(){
   Route::get('dashboard/profile','DashboardController@profile_view')->name('dashboard/profile');
 });
 
-Route::post('save_contact','ContactUsController@createContact')->name('save');
+Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
 
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');

@@ -128,6 +128,7 @@
                 </li>
                 <li class="header">MAIN</li>
                 <li class="active open"> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-eye"></i><span>Bookings</span></a></li>
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
                         <li><a href="#">Add Product</a></li>

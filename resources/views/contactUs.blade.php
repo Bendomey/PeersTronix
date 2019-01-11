@@ -31,21 +31,33 @@
   <div class="row mb-5">
     <div class="col-lg-9 col-md-12 col-sm-12  justify-content-center one">
     <div class="container">
-      <form action="#" class="form" method="POST">
+
+      @if(Session::has('success'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Congratulations!</strong> {!! Session::get('success') !!}.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      @endif
+      <form action="{{route('save_contact')}}" class="form" method="POST">
+        @csrf
         <div class="row mb-lg-3 mb-md-3 mb-sm-3">
           <div class="col-lg-6 col-md-6 col-sm-12 mb-2 mb-sm-3">
-            <input type="text" name="full_name" value="" class="form-control form-control-lg rounded-0 py-3" style=" border-color: #eee;" placeholder="Your Name*" required>
+            <input type="text" name="customer_full_name" value="" class="form-control form-control-lg rounded-0 py-3" style=" border-color: #eee;" placeholder="Your Name*" required>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
-            <input type="email" name="email" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Your Email*" required>
+            <input type="email" name="customer_email" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Your Email*" required>
           </div>
         </div>
         <div class="row mb-lg-3 mb-md-3 mb-sm-3">
           <div class="col-lg-6 col-md-6 col-sm-12 mb-2 mb-sm-3">
-            <input type="text" name="company_name" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Company Name" required>
+            <input type="text" name="company_name" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Company Name">
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
-            <input type="tel" name="phone" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Your Phone*" required>
+            <input type="tel" name="customer_phone" value="" class="form-control form-control-lg rounded-0 py-3" style="border-color: #eee;" placeholder="Your Phone*" required>
           </div>
         </div>
         <div class="row mb-3">
