@@ -67,8 +67,8 @@
               <p class="d-flex justify-content-center">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
+                <i class="fa fa-star-of-life"></i>
+                <i class="fa fa-star-half-alt"></i>
               </p>
               <p class="card-text text-center">Ghc 1,500</p>
             </div>

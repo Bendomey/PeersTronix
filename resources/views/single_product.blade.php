@@ -3,7 +3,6 @@
 @section('title','Shop')
 
 @section('content')
-
 <section class="js-parallax u-promo-block" style="background-image: url(images/contactUs.jpg); background-size: 100% 100%">
   <div class="container text-white u-ver-center u-content-space">
     <div class="row justify-content-center">
@@ -34,16 +33,16 @@
       <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="400" class="w-100 mb-1" alt="">
       <div class="row">
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
+          <a href="{{asset('images/4262501_sd--400x400.jpg')}}" target="_blank"><img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 img-thumbnail mb-1" alt=""></a>
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
+          <a href="{{asset('images/4262501_sd--400x400.jpg')}}" target="_blank"><img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 img-thumbnail mb-1" alt=""></a>
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
+          <a href="{{asset('images/4262501_sd--400x400.jpg')}}" target="_blank"><img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 img-thumbnail mb-1" alt=""></a>
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
+          <a href="{{asset('images/4262501_sd--400x400.jpg')}}" target="_blank"><img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 img-thumbnail mb-1" alt=""></a>
         </div>
       </div>
     </div>
@@ -51,7 +50,7 @@
       <h1>SAMSUNG GALAXY</h1>
       <h4>Ghc 400</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      <a href="#" class="btn btn-dark btn-lg btn-block">Purchase</a>
+      <a href="#" class="btn btn-dark btn-lg btn-block"><i class="fa fa-cart-arrow-down"></i> Purchase</a>
     </div>
   </div>
   <!-- description and reviews -->
@@ -69,7 +68,22 @@
         <div class="tab-pane fade show active mt-4 mb-5" id="description" role="tabpanel" aria-labelledby="description-tab">
           <p>hello</p>
         </div>
-        <div class="tab-pane fade" id="additional_info" role="tabpanel" aria-labelledby="additional_info-tab">...</div>
+        <div class="tab-pane fade mb-5 mt-4" id="additional_info" role="tabpanel" aria-labelledby="additional_info-tab">
+          <p>
+            <ul>
+              <li>
+                <strong>Brand : </strong> Samsung
+              </li>
+              <li>
+                <strong>Color :</strong> Red
+              </li>
+            </ul>
+            <p>
+              <h5>More Information</h5>
+              <p>hello world</p>
+            </p>
+          </p>
+        </div>
     </div>
 
 
@@ -84,6 +98,12 @@
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
               <h4 class="card-title text-center">Samsung Galaxy</h4>
+              <p class="d-flex justify-content-center">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <!-- <i class="fa fa-star-of-life"></i> -->
+                <i class="fa fa-star-half-alt"></i>
+              </p>
               <p class="card-text text-center">Ghc 1,500</p>
             </div>
           </div>
@@ -95,6 +115,12 @@
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
               <h4 class="card-title text-center">Samsung Galaxy</h4>
+              <p class="d-flex justify-content-center">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <!-- <i class="fa fa-star-of-life"></i> -->
+                <i class="fa fa-star-half-alt"></i>
+              </p>
               <p class="card-text text-center">Ghc 1,500</p>
             </div>
           </div>
@@ -106,6 +132,12 @@
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
               <h4 class="card-title text-center">Samsung Galaxy</h4>
+              <p class="d-flex justify-content-center">
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+                <!-- <i class="fa fa-star-of-life"></i> -->
+                <i class="fa fa-star-half-alt"></i>
+              </p>
               <p class="card-text text-center">Ghc 1,500</p>
             </div>
           </div>

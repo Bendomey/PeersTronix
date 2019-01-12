@@ -33,6 +33,8 @@ Route::group([],function(){
   Route::post('update_password','DashboardController@update_password')->name('update_password');
   Route::post('update_profile_img','DashboardController@update_profile_img')->name('update_profile_img');
   Route::get('dashboard/bookings','DashboardController@booking_view')->name('dashboard/bookings');
+  Route::get('dashboard/add_product','DashboardController@add_product_view')->name('dashboard/add_product');
+  Route::post('dashboard/add_product/phase_1','ProductController@add_product')->name('dashboard/add_product/phase_1');
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');

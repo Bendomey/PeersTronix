@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/multi-select/css/multi-select.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/plugins/nouislider/nouislider.min.css')}}" />
+
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/color_skins.css')}}">
@@ -135,7 +140,7 @@
                 <li> <a href="{{route('dashboard/bookings')}}"><i class="zmdi zmdi-eye"></i><span>Bookings</span></a></li>
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
-                        <li><a href="#">Add Product</a></li>
+                        <li><a href="{{route('dashboard/add_product')}}">Add Product</a></li>
                         <li><a href="#">View Products</a></li>
                         <li><a href="#">Edit Products</a></li>
                     </ul>
@@ -166,7 +171,7 @@
                     <form action="{{route('update_profile_img')}}" enctype="multipart/form-data" method="post" class="form">
                         @csrf
                         <input type="hidden" value="{{Auth::user()->id}}">
-                        <input type="file" name="profile_img" id="upload" onchange="previewImage(event)">
+                        <input type="file" name="profile_img" id="upload" class="form-control my-1" onchange="previewImage(event)">
                         <button class="btn btn-default btn-round waves-effect">Save</button>
                     </form>
                 </div>
@@ -200,6 +205,12 @@
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
     <script src="{{asset('js/all.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script> <!-- Bootstrap Colorpicker Js -->
+    <script src="{{asset('assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}"></script> <!-- Input Mask Plugin Js -->
+    <script src="{{asset('assets/plugins/multi-select/js/jquery.multi-select.js')}}"></script> <!-- Multi Select Plugin Js -->
+    <script src="{{asset('assets/plugins/jquery-spinner/js/jquery.spinner.js')}}"></script> <!-- Jquery Spinner Plugin Js -->
+    <script src="{{asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script> <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="{{asset('assets/plugins/nouislider/nouislider.js')}}"></script> <!-- noUISlider Plugin Js -->
 
 
     <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script>

@@ -31,6 +31,10 @@ class DashboardController extends Controller
       return view('dashboard/bookings',compact('all_booking'));
     }
 
+    public function add_product_view(){
+      return view('dashboard/add_product');
+    }
+
     public function update_profile(Request $request){
 
         User::where('id',$request->id)->update(['name'=>$request->name,'email'=>$request->email,'position'=>$request->position,'contact'=>$request->contact]);
