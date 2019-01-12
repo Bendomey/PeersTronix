@@ -58,9 +58,6 @@ class DashboardController extends Controller
 
     public function update_profile_img(Request $request){
 
-        $this->validate($request, [
-            'profile_img' => 'image|mimes:jpeg,png,jpg'
-        ]);
         $user = User::find($request->id);
 
         $originalImage = $request->file('profile_img');

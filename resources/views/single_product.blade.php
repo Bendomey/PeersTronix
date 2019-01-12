@@ -23,7 +23,7 @@
 <ol class="breadcrumb breadcrumb-dot d-flex justify-content-center">
   <li class="breadcrumb-item"><a href="{{route('/')}}" class="text-dark">HOME</a></li>
 <li class="breadcrumb-item"><a href="{{route('products')}}" class="text-dark">Shop</a></li>
-<li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">Samsung Galaxy</li>
+<li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">{{$id}}</li>
 </ol>
 </nav>
 </div>
@@ -31,19 +31,19 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
-      <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="500" class="w-100 mb-1" alt="">
+      <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="400" class="w-100 mb-1" alt="">
       <div class="row">
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" class="w-100 mb-1" alt="">
+          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" class="w-100 mb-1" alt="">
+          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" class="w-100 mb-1" alt="">
+          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
         </div>
         <div class="col-3">
-          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" class="w-100 mb-1" alt="">
+          <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="100" class="w-100 mb-1" alt="">
         </div>
       </div>
     </div>
@@ -56,6 +56,22 @@
   </div>
   <!-- description and reviews -->
 
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="additional_info-tab" data-toggle="tab" href="#additional_info" role="tab" aria-controls="additional_info" aria-selected="false">Additional Information</a>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active mt-4 mb-5" id="description" role="tabpanel" aria-labelledby="description-tab">
+          <p>hello</p>
+        </div>
+        <div class="tab-pane fade" id="additional_info" role="tabpanel" aria-labelledby="additional_info-tab">...</div>
+    </div>
+
 
 
   <div class="d-flex justify-content-center">
@@ -63,7 +79,7 @@
   </div>
   <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/1')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
@@ -74,7 +90,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/2')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
@@ -85,7 +101,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/3')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">

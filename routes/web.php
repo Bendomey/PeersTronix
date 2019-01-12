@@ -23,7 +23,7 @@ Route::group([],function(){
   Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
   Route::get('products','ViewController@products')->name('products');
-  Route::get('single_product/{id}','ViewController@single_product');
+  Route::get('single_product/{id}','ViewController@single_product')->name('single_product/{id}');
 });
 
 Route::group([],function(){
