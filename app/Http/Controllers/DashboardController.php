@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\User;
+use App\Product;
 use Illuminate\Support\Facades\Hash;
 use Image;
 
@@ -33,6 +34,11 @@ class DashboardController extends Controller
 
     public function add_product_view(){
       return view('dashboard/add_product');
+    }
+
+    public function view_products(){
+      $products = Product::where(['product_availability'=>'available']);
+      return view('dashboard/view_product',compact('products'));
     }
 
     public function update_profile(Request $request){

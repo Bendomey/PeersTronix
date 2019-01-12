@@ -35,6 +35,7 @@ Route::group([],function(){
   Route::get('dashboard/bookings','DashboardController@booking_view')->name('dashboard/bookings');
   Route::get('dashboard/add_product','DashboardController@add_product_view')->name('dashboard/add_product');
   Route::post('dashboard/add_product/phase_1','ProductController@add_product')->name('dashboard/add_product/phase_1');
+  Route::get('dashboard/view_products','DashboardController@view_products')->name('dashboard/view_products');
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
