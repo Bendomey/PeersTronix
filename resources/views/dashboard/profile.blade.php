@@ -28,7 +28,8 @@
               <div class="member-img">
                   <img src="{{asset('assets/images/profile_av.jpg')}}" class="rounded-circle" alt="profile-image">
               </div>
-              <button class="btn btn-primary mt-3">Change</button>
+              <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#defaultModal">Change</button>
+
               <div class="body">
                   <div class="col-12">
                       <ul class="social-links list-unstyled">
@@ -84,6 +85,17 @@
 
 
                   @endif
+                      @if(Session::has('errorMsg'))
+
+                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                              <strong>WARNING!</strong> {!! Session::get('errorMsg') !!}.
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+
+
+                      @endif
 
                   <div class="card">
                       <div class="header">
@@ -92,6 +104,7 @@
                       <div class="body">
                         <form class="form" action="{{route('update_profile')}}" method="post">
                           @csrf
+                            <input type="hidden" value="{{Auth::user()->id}}" name="id">
                           <label for="full name">Full Name</label>
                           <div class="form-group">
                               <input type="text" class="form-control" value="{{Auth::user()->name}}" name="name" required readonly>
@@ -118,14 +131,18 @@
                           <h2><strong>Security</strong> Settings</h2>
                       </div>
                       <div class="body">
-                        <form class="form" action="#" method="post">
+                        <form class="form" action="{{route('update_password')}}" method="post">
                           @csrf
-                          <div class="form-group">
-                              <input type="password" name="" class="form-control currentPass" placeholder="Current Password" required>
+                            <input type="hidden" value="{{Auth::user()->id}}" name="id">
+                            <div class="form-group">
+                              <input type="password" name="old_password" class="form-control currentPass" placeholder="Current Password" required>
                           </div>
                           <div class="form-group">
-                              <input type="password" name="" class="form-control newPass" placeholder="New Password" required>
+                              <input type="password" name="new_password" class="form-control newPass" placeholder="New Password" required>
                           </div>
+                            <div class="form-group">
+                                <input type="password" name="confirm_password" class="form-control confirmPass" placeholder="Confirm Password" required>
+                            </div>
                           <button class="btn btn-primary btn-round saveSecSetting">Save Changes</button>
                         </form>
                       </div>
@@ -135,6 +152,8 @@
       </div>
   </div>
 </div>
+
+
 
 
 @stop

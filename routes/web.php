@@ -23,13 +23,15 @@ Route::group([],function(){
   Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
   Route::get('products','ViewController@products')->name('products');
-  Route::get('single_product','ViewController@single_product')->name('single_product');
+  Route::get('single_product/{id}','ViewController@single_product');
 });
 
 Route::group([],function(){
   Route::get('dashboard','DashboardController@index')->name('dashboard');
   Route::get('dashboard/profile','DashboardController@profile_view')->name('dashboard/profile');
   Route::post('update_profile','DashboardController@update_profile')->name('update_profile');
+  Route::post('update_password','DashboardController@update_password')->name('update_password');
+  Route::post('update_profile_img','DashboardController@update_profile_img')->name('update_profile_img');
   Route::get('dashboard/bookings','DashboardController@booking_view')->name('dashboard/bookings');
 });
 

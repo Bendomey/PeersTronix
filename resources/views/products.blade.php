@@ -42,7 +42,7 @@
   </div>
   <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/samsung galaxy')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
@@ -53,7 +53,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/temple')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
@@ -64,7 +64,7 @@
         </a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{route('single_product')}}" class="text-decoration-none">
+        <a href="{{url('single_product/laptop')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
             <div class="card-body">

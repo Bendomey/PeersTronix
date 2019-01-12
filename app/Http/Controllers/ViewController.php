@@ -32,7 +32,7 @@ class ViewController extends Controller
     return view('products');
   }
 
-  public function single_product(){
+  public function single_product($id){
     return view('single_product');
   }
 

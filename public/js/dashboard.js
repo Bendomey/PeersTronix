@@ -2,6 +2,20 @@
 
 
 
+// for image preview
+function previewImage(event){
+    var reader = new FileReader();
+    var imageField = document.getElementById('img');
+
+    reader.onload = function () {
+        if (reader.readyState == 2){
+            imageField.src = reader.result;
+        }
+    }
+
+    reader.readAsDataURL(event.target.files[0]);
+}
+
 
 $(document).ready(function(){
 // alert('a')
@@ -25,4 +39,12 @@ $(document).ready(function(){
   //   }
   //   return true;
   // })
-})
+    $('.confirmPass').hide();
+    $('.newPass').focus(function () {
+
+        $('.confirmPass').show();
+    });
+
+});
+
+
