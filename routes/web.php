@@ -29,6 +29,7 @@ Route::group([],function(){
 Route::group([],function(){
   Route::get('dashboard','DashboardController@index')->name('dashboard');
   Route::get('dashboard/profile','DashboardController@profile_view')->name('dashboard/profile');
+  Route::post('update_profile','DashboardController@update_profile')->name('update_profile');
   Route::get('dashboard/bookings','DashboardController@booking_view')->name('dashboard/bookings');
 });
 

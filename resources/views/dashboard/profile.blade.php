@@ -56,8 +56,9 @@
                       <p>
                         @if(Auth::user()->contact == null)
                           <i>Null</i>
-                        @endif
-                        {{Auth::user()->contact}}
+                        @else
+                            {{Auth::user()->contact}}
+                         @endif
                       </p>
                   </div>
               </div>
@@ -72,28 +73,40 @@
           <div class="tab-content">
               <div role="tabpanel" class="tab-pane active" id="usersettings">
 
+                  @if(Session::has('success'))
+
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                          <strong>Congratulations!</strong> {!! Session::get('success') !!}.
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+
+
+                  @endif
+
                   <div class="card">
                       <div class="header">
                           <h2><strong>Account</strong> Settings</h2>
                       </div>
                       <div class="body">
-                        <form class="form" action="#" method="post">
+                        <form class="form" action="{{route('update_profile')}}" method="post">
                           @csrf
                           <label for="full name">Full Name</label>
                           <div class="form-group">
-                              <input type="text" class="form-control" value="{{Auth::user()->name}}" required readonly>
+                              <input type="text" class="form-control" value="{{Auth::user()->name}}" name="name" required readonly>
                           </div>
                           <label for="email">Email</label>
                           <div class="form-group">
-                              <input type="email" class="form-control" value="{{Auth::user()->email}}" required readonly>
+                              <input type="email" class="form-control" value="{{Auth::user()->email}}" name="email" required readonly>
                           </div>
                           <label for="contact">Position</label>
                           <div class="form-group">
-                              <input type="text" class="form-control" value="{{Auth::user()->position}}" required readonly>
+                              <input type="text" class="form-control" value="{{Auth::user()->position}}" name="position" required readonly>
                           </div>
                           <label for="contact">Contact</label>
                           <div class="form-group">
-                              <input type="tel" class="form-control" value="{{Auth::user()->contact}}" required readonly>
+                              <input type="tel" class="form-control" value="{{Auth::user()->contact}}" name="contact" required readonly>
                           </div>
                           <button type="submit" class="btn btn-primary btn-round saveAccSetting">Save Changes</button>
                         </form>

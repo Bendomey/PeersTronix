@@ -42,6 +42,7 @@
         </div>
 
       @endif
+
       <form action="{{route('save_contact')}}" class="form" method="POST">
         @csrf
         <div class="row mb-lg-3 mb-md-3 mb-sm-3">
