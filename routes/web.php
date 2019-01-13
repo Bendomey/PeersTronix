@@ -48,6 +48,8 @@ Route::group([],function(){
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
+Route::get('delete_contact/{id}','ContactUsController@destroy');
+Route::get('accept_booking/{id}','ContactUsController@accept_booking');
 
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');

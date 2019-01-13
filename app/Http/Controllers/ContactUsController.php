@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BookingRequest;
+use App\Mail\bookingRequestAccepted;
 
 class ContactUsController extends Controller
 {
@@ -27,4 +28,23 @@ class ContactUsController extends Controller
 
       return back()->with('success','Your request has been submitted successfully');
     }
+
+    public function accept_booking($id){
+      Contact::where('customer_id',$id)->update(['accept'=>'1']);
+
+      $booking = Contact::where('customer_id',$id)->first();
+      $data = array(
+        'customer_name'=>$booking->customer_full_name
+      );
+
+      Mail::to($booking->customer_email)->send(new bookingRequestAccepted($data));
+
+      return back()->with('success',"$booking->customer_full_name\'s request has been accepted");
+    }
+
+    public function destroy($id){
+      $contact = Contact::where('customer_id',$id)->delete();
+      return back()->with('success','Request Declined successfully');
+    }
+
 }

@@ -20,6 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('customer_phone');
             $table->string('message');
+            $table->enum('accept',['0','1'])->default('0');
             $table->timestamps();
         });
     }

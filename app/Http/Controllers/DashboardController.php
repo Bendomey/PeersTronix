@@ -21,9 +21,10 @@ class DashboardController extends Controller
     }
 
     public function index(){
-      $bookings = Contact::all()->count();
+      $bookings = Contact::where('accept','0')->count();
       $available = Product::where('product_availability','available')->count();
-      return view('dashboard.index')->with(['bookings' => $bookings,'product_available'=>$available]);
+      $accepted = Contact::where('accept','1')->count();
+      return view('dashboard.index')->with(['bookings' => $bookings,'product_available'=>$available,'accepted'=>$accepted]);
     }
 
     public function profile_view(){
@@ -31,7 +32,7 @@ class DashboardController extends Controller
     }
 
     public function booking_view(){
-      $all_booking = Contact::all();
+      $all_booking = Contact::where('accept','0')->get();
       return view('dashboard/bookings',compact('all_booking'));
     }
 
@@ -105,5 +106,5 @@ class DashboardController extends Controller
         return $name;
     }
 
-    
+
 }

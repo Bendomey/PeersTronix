@@ -39,11 +39,11 @@
                 <div class="body">
                     <div class="row">
                         <div class="col-7">
-                            <h5 class="m-t-0">Bookings Affirmed</h5>
-                            <p class="text-small">Total Bookings Affirmed</p>
+                            <h5 class="m-t-0">Bookings Accepted</h5>
+                            <p class="text-small">Total Bookings Accepted</p>
                         </div>
                         <div class="col-5 text-right">
-                            <h2 class="">39</h2>
+                            <h2 class="">{{$accepted}}</h2>
                         </div>
                     </div>
                 </div>
