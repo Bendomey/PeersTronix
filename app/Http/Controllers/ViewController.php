@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ViewController extends Controller
 {
@@ -29,11 +30,14 @@ class ViewController extends Controller
   }
 
   public function products(){
-    return view('products');
+    $all_available_product = Product::where('product_availability','available')->get();
+    return view('products',compact('all_available_product'));
   }
 
   public function single_product($id){
-    return view('single_product')->with('id',$id);
+    $one_product = Product::where('product_id',$id)->first();
+    $some_product = Product::where('product_id','!=',$id)->where(['product_availability'=>'available','product_category'=>$one_product->product_category])->take(3)->get();
+    return view('single_product',compact(['one_product','some_product']));
   }
 
 
