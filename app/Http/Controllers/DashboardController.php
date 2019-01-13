@@ -36,8 +36,13 @@ class DashboardController extends Controller
       return view('dashboard/add_product');
     }
 
+    public function edit_product_view($product_id){
+      $product_to_be_edited = Product::where('product_id',$product_id)->get();
+      return view('dashboard/edit_product',compact('product_to_be_edited'));
+    }
+
     public function view_products(){
-      $products = Product::where(['product_availability'=>'available']);
+      $products = Product::where(['product_availability'=>'available'])->get();
       return view('dashboard/view_product',compact('products'));
     }
 

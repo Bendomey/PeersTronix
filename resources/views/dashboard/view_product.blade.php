@@ -31,28 +31,31 @@
                                   <th>Product Name</th>
                                   <th>Category</th>
                                   <th>Price</th>
-                                  <th>Image</th>
+                                  <th>Brand</th>
+                                  <th>Rating</th>
                                   <th>Action</th>
                               </tr>
                           </thead>
                           <tbody>
                               <tr>
-                                @if(count($products))
-                                    @foreach($products as $product)
-
+                                @if(count($products) > 0)
+                                  @foreach($products as $product)
                                     <td>{{$product->product_name}}</td>
                                     <td>{{$product->product_category}}</td>
-                                    <td>{{$product->product_price}}</td>
-                                    <td><img src="{{asset('images/2.jpg')}}" class="rounded-circle w-100" height="100" alt=""> </td>
+                                    <td>Ghc {{$product->product_price}}</td>
+                                    <td>{{$product->product_brand}}</td>
+                                    <td>{{$product->product_rating}}</td>
                                     <td>
-                                      <button class="btn btn-success"><i class="fa fa-check"></i> Attend</button>
-                                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                      <button class="btn btn-info"><i class="fa fa-eye"></i> View</button>
+                                      <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Sell</button>
+                                      <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
                                     </td>
-                                    @endforeach
+                                  @endforeach
+
                                   @else
-
-                                  alerts
-
+                                  <div class="alert alert-warning" role="alert">
+                                      <strong>Sorry!</strong> No products Available :(
+                                  </div>
                                   @endif
                               </tr>
                           </tbody>

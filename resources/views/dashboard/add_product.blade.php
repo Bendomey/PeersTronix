@@ -12,7 +12,7 @@
         <div class="col-lg-5 col-md-6 col-sm-12">
             <ul class="breadcrumb float-md-right">
               <li class="breadcrumb-item"><a href="{{route('dashboard')}}"><i class="zmdi zmdi-home"></i> PeersTronix</a></li>
-                <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-eye"></i> Product</a></li>
+                <li class="breadcrumb-item"><a href="{{route('dashboard/view_products')}}"><i class="zmdi zmdi-eye"></i> Product</a></li>
                 <li class="breadcrumb-item active">Add New Product</li>
             </ul>
         </div>

@@ -29,7 +29,10 @@ class ProductController extends Controller
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
 
-
+  public function sell_product(Request $request){
+    $product = Product::where('product_id',$request->product_id)->update(['availability','sold']);
+    return back();
+  }
 
   protected function image($image){
       $name = md5(microtime());

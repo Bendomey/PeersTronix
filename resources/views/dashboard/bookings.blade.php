@@ -38,7 +38,7 @@
                           </thead>
                           <tbody>
                               <tr>
-                                @if(count($all_booking))
+                                @if(count($all_booking) > 0)
                                     @foreach($all_booking as $booking)
                                     <td>{{$booking->customer_full_name}}</td>
                                     <td>

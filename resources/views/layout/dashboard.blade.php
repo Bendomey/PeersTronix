@@ -141,8 +141,7 @@
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
                         <li><a href="{{route('dashboard/add_product')}}">Add Product</a></li>
-                        <li><a href="#">View Products</a></li>
-                        <li><a href="#">Edit Products</a></li>
+                        <li><a href="{{route('dashboard/view_products')}}">View Products</a></li>
                     </ul>
                 </li>
             </ul>
