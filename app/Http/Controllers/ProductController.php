@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BuyerRequest;
 use App\Product;
 use App\BuyProduct;
 class ProductController extends Controller
@@ -35,8 +37,8 @@ class ProductController extends Controller
   }
 
   public function make_available($id){
-    // Product::where('product_id',$id)->update(['product_availability'=>'available']);
-    DB::update('update products set product_availability = ? where product_id = ?',['available',$id]);
+    Product::where('product_id',$id)->update(['product_availability'=>'available']);
+    // DB::update('update products set product_availability = ? where product_id = ?',['available',$id]);
     return back()->with('success',"The product has been uploaded successfully");
   }
 
@@ -66,6 +68,14 @@ class ProductController extends Controller
 
   public function buy_product(Request $request){
     $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_location','product_name']));
+    $data = array(
+      'owner_name'=>'Ebenezer',
+      'buyer'=>$request->buyer_name,
+      'product'=>$request->product_name,
+      'contact'=>$request->buyer_contact,
+      'location'=>$request->buyer_location
+    );
+    Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
   }
 

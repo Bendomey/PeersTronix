@@ -104,4 +104,6 @@ class DashboardController extends Controller
         $name = 'profile_images/'. $profile .'.'.$data->getClientOriginalExtension();
         return $name;
     }
+
+    
 }
