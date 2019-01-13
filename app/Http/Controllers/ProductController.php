@@ -35,7 +35,7 @@ class ProductController extends Controller
   }
 
   public function make_available($id){
-    $products = Product::where('product_id',$id)->update(['product_availability'=>'available']);
+    Product::where('product_id',$id)->where('product_availability','sold')->update(['product_availability'=>'available']);
     return back()->with('success',"The product has been uploaded successfully");
   }
 

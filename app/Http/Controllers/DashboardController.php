@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\User;
 use App\Product;
 use App\BuyProduct;
 use Illuminate\Support\Facades\Hash;
-use Intervention\Support\Facades\Image;
+use Intervention\Image\Facades\Image;
 
 
 class DashboardController extends Controller
@@ -89,17 +90,27 @@ class DashboardController extends Controller
     }
 
     public function update_profile_img(Request $request){
-
-        $user = User::find($request->id);
-
-        $originalImage = $request->file('profile_img');
-        $newName = md5(microtime());
-        $image = Image::make($originalImage);
-        $NameForDatabase = 'profile_images/'.$newName.'.'.$originalImage->getClientOriginalExtension();
-        $user->profile_img = $NameForDatabase;
-        $image->save($NameForDatabase);
-        $user->save();
+      User::where('id',Auth::user()->id)->update([
+          'profile_img'=>$this->profileUpdate($request->profile_img),
+      ]);
+        // $user = User::find($request->id);
+        //
+        // $originalImage = $request->file('profile_img');
+        // $newName = md5(microtime());
+        // $image = Image::make($originalImage);
+        // $NameForDatabase = 'profile_images/'.$newName.'.'.$originalImage->getClientOriginalExtension();
+        // $user->profile_img = $NameForDatabase;
+        // $image->save($NameForDatabase);
+        // $user->save();
         return back()->with('success','Your Profile Picture was uploaded successfully');
 
+    }
+
+    protected function profileUpdate($data){
+        $user = user::where('id',Auth::user()->id)->first();
+        $profile = md5(microtime());
+        Image::make($data)->save('profile_images/'. $profile .'.'.$data->getClientOriginalExtension());
+        $name = 'profile_images/'. $profile .'.'.$data->getClientOriginalExtension();
+        return $name;
     }
 }

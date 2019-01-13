@@ -28,7 +28,7 @@
                     <h4 class="m-t-10">{{Auth::user()->name}}</h4>
                 </div>
                 <div class="member-img">
-                    <img src="{{asset('assets/images/profile_av.jpg')}}" class="rounded-circle" alt="profile-image">
+                    <img src='{{asset(Auth::user()->profile_img)}}' class="rounded-circle" alt="profile-image">
                 </div>
                 <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#defaultModal">Change</button>
 
@@ -168,7 +168,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{asset('assets/images/profile_av.jpg')}}" class="w-50 rounded-circle" height="200" id="img" alt="{{Auth::user()->name}} profile picture">
+                <img src='{{asset(Auth::user()->profile_img)}}' class="w-50 rounded-circle" height="200" id="img" alt="{{Auth::user()->name}} profile picture">
                 <form action="{{route('update_profile_img')}}" enctype="multipart/form-data" method="post" class="form">
                     @csrf
                     <input type="hidden" value="{{Auth::user()->id}}">
