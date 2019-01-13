@@ -37,7 +37,7 @@ class DashboardController extends Controller
     }
 
     public function edit_product_view($product_id){
-      $product_to_be_edited = Product::where('product_id',$product_id)->get();
+      $product_to_be_edited = Product::where('product_id',$product_id)->first();
       return view('dashboard/edit_product',compact('product_to_be_edited'));
     }
 

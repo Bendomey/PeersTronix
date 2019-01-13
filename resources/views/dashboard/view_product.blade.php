@@ -46,8 +46,8 @@
                                     <td>{{$product->product_brand}}</td>
                                     <td>{{$product->product_rating}}</td>
                                     <td>
-                                      <button class="btn btn-info"><i class="fa fa-eye"></i> View</button>
-                                      <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Sell</button>
+                                      <button class="btn btn-info" data-toggle="modal" data-target="#viewProduct"><i class="fa fa-eye"></i> View</button>
+                                      <a href='{{url("sell_product/$product->product_id")}}'><button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Sell</button></a>
                                       <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
                                     </td>
                                   @endforeach
