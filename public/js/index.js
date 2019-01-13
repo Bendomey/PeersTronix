@@ -7,6 +7,12 @@ $(document).ready(function() {
   // collapse
   $("[class='collapse show']").collapse();
 
+  $('.buyProductForm').hide();
+  $('.buy').click(function(){
+    $(this).hide();
+    $('.buyProductForm').show();
+  });
+
 
 
 });

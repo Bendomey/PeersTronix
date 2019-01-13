@@ -35,8 +35,8 @@ class ViewController extends Controller
   }
 
   public function single_product($id){
-    $one_product = Product::where('product_id',$id)->first();
-    $some_product = Product::where('product_id','!=',$id)->where(['product_availability'=>'available','product_category'=>$one_product->product_category])->take(3)->get();
+    $one_product = Product::where('product_name',$id)->first();
+    $some_product = Product::where('product_name','!=',$id)->where(['product_availability'=>'available','product_category'=>$one_product->product_category])->take(3)->get();
     return view('single_product',compact(['one_product','some_product']));
   }
 

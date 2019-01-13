@@ -26,25 +26,30 @@ $(document).ready(function(){
     $(this).hide();
     $('.saveAccSetting').show();
     $('input[readonly]').removeAttr('readonly');
-  })
+  });
 
-  // let current = $('.currentPass').val();
-  // let newPass = $('.newPass').val();
-  // for Security
-  // $('.saveSecSetting').click(function() {
-  //   if(current === newPass){
-  //     // e.preventDefault();
-  //     $(this).append('password shouldn\' be the same')
-  //     return false;
-  //   }
-  //   return true;
-  // })
+
     $('.confirmPass').hide();
     $('.newPass').focus(function () {
 
         $('.confirmPass').show();
     });
 
+
+    // for view modal in the view_product
+    $('.view_product').click(function(){
+      let data = $(this).data('product');
+      for (key in data) {
+        $(`input[name=${key}]`).val(data[key]);
+      }
+      for(key in data){
+        $(`textarea[name=${key}]`).text(data[key]);
+      }
+      $('#thumb_picture').attr('src',`${data.thumb_picture}`);
+      $('#image_one').attr('src',`${data.image_two}`);
+      $('#image_two').attr('src',`${data.image_three}`);
+      $('#image_four').attr('src',`${data.image_four}`);
+      $('#viewProduct').modal(show);
+    });
+alert('hello')
 });
-
-

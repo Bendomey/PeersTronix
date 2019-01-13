@@ -1,16 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Product;
-
+use App\BuyProduct;
 class ProductController extends Controller
 {
-
   public function add_product(Request $request){
-
     $product = new Product;
     $product->product_name = $request->product_name;
     $product->product_price = $request->product_price;
@@ -28,23 +24,37 @@ class ProductController extends Controller
     $product->save();
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
-
   public function sell_product($id){
     $product = Product::where('product_id',$id)->update(['availability','sold']);
     return redirect('dashboard/view_product');
   }
-
   public function edit_product(Request $request,$id){
     $product = new Product;
-
     return redirect('dashboard/view_product');
   }
+
 
   protected function image($image){
       $name = md5(microtime());
       Image::make($image)->save('product_images/'. $name .'.'.$image->getClientOriginalExtension());
       $image_save = 'product_images/'. $name .'.'.$image->getClientOriginalExtension();
       return $image_save;
+  }
+
+  public function destroy($id){
+    $product = Product::where('product_id',$id)->first();
+    unlink($product->thumb_picture);
+    unlink($product->image_one);
+    unlink($product->image_two);
+    unlink($product->image_three);
+    unlink($product->image_four);
+    Product::where('product_id',$id)->delete();
+    return back()->with('success','Your product was deleted successfully');
+  }
+
+  public function buy_product(Request $request){
+    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_location','product_name']));
+    return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
   }
 
 }

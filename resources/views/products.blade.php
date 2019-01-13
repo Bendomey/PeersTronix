@@ -44,7 +44,7 @@
     @if(count($all_available_product))
       @foreach($all_available_product as $product)
       <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{url('single_product/1')}}" class="text-decoration-none">
+        <a href='{{url("single_product/$product->product_name")}}' class="text-decoration-none">
           <div class="card shadow mb-5">
             <img src='{{asset("$product->thumb_picture")}}' height="300" class="card-img-top w-100" alt="">
             <div class="card-body">

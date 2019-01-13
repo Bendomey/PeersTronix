@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\User;
 use App\Product;
+use App\BuyProduct;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Support\Facades\Image;
 
@@ -45,6 +46,16 @@ class DashboardController extends Controller
     public function view_products(){
       $products = Product::where(['product_availability'=>'available'])->get();
       return view('dashboard/view_product',compact('products'));
+    }
+
+    public function buyer_info_view(){
+      $all_info = BuyProduct::all();
+      return view('dashboard/buyer_info',compact('all_info'));
+    }
+
+    public function delete_buyer_request($id){
+      BuyProduct::where('buyer_id',$id)->delete();
+      return back()->with('success','This request was successfully deleted');
     }
 
     public function update_profile(Request $request){

@@ -142,6 +142,7 @@
                     <ul class="ml-menu">
                         <li><a href="{{route('dashboard/add_product')}}">Add Product</a></li>
                         <li><a href="{{route('dashboard/view_products')}}">View Products</a></li>
+                        <li><a href="{{route('dashboard/buyer_info')}}">Buyer's Information</a></li>
                     </ul>
                 </li>
             </ul>
@@ -153,7 +154,7 @@
 
 
 
-  
+
 
 
 

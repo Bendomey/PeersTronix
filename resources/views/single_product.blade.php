@@ -47,11 +47,37 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
+      @if(Session::has('success'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Congratulations!</strong> {!! Session::get('success') !!}.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      @endif
+
       <h1>{{$one_product->product_name}}</h1>
       <h4>Ghc {{$one_product->product_price}}</h4>
       <p>{{$one_product->brief_description}}</p>
-      <a href="#" class="btn btn-dark btn-lg btn-block"><i class="fa fa-cart-arrow-down"></i> Purchase</a>
+      <a href="#" class="btn btn-dark btn-lg btn-block buy"><i class="fa fa-cart-arrow-down"></i> Purchase</a>
       <p class="my-3"><strong>Category :</strong>{{$one_product->product_category}} </p>
+      <form class="form buyProductForm" action="{{route('buy_product')}}" method="post">
+        @csrf
+        <div class="form-group">
+          <i>Please fill this form</i>
+          <input type="text" name="buyer_name" class="form-control" aria-describedby="emailHelp" placeholder="Enter Your Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" name="buyer_contact" placeholder="Enter Your Contact" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Your Location" name="buyer_location" required>
+        </div>
+        <input type="hidden" name="product_name" value="{{$one_product->product_name}}" required>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
   <!-- description and reviews -->
