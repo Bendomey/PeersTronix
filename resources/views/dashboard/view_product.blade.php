@@ -62,7 +62,7 @@
                                       <td>
                                         <button class="btn btn-info view_product" data-product="{{$product}}"><i class="fa fa-eye"></i> View</button>
                                         <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
-                                        <a href='{{url("delete_product/$product->product_id")}}'><button class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Remove</button></a>
+                                        <a href='{{url("delete_product/$product->product_id")}}'><button class="btn btn-danger"><i class="fa fa-trash mr-1"></i></button></a>
                                       </td>
                                     </tr>
                                     @endforeach
