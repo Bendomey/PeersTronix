@@ -28,8 +28,12 @@
 </div>
 
 <div class="container">
-  <div class="row d-flex justify-content-between">
+  <div class="row d-flex justify-content-between mb-5">
     <p style="color: grey">Showing all</p>
+    <form class="form-inline" action="{{route('search_results')}}" method="get">
+      <input type="search" name="product_name" class="form-control form-control-lg mr-2">
+      <button type="submit" class="btn btn-dark btn-lg">Search</button>
+    </form>
     <form class="form" action="#" method="post">
       <select class="form-control form-control-sm rounded-0" name="sort">
         <option value="default">Default Sorting</option>
@@ -39,9 +43,16 @@
         <option value="high_to_low">Sort By Price: High To Low</option>
       </select>
     </form>
+    @if(count($all_available_product) == 0)
+
+      <div class="alert alert-warning" role="alert">
+        <strong>Sorry!</strong> No Product For Sale :(
+      </div>
+
+    @endif
   </div>
-  <div class="row">
-    @if(count($all_available_product))
+  <div class="row mb-5">
+    @if(count($all_available_product) > 0)
       @foreach($all_available_product as $product)
       <div class="col-lg-4 col-md-4 col-sm-6">
         <a href='{{url("single_product/$product->product_name")}}' class="text-decoration-none">
@@ -56,7 +67,6 @@
                 @for($i = 0; $i < (5 - $product->product_rating); $i++)
                   <i class="far fa-star"></i>
                 @endfor
-
               </p>
               <p class="card-text text-center">Ghc {{$product->product_price}}</p>
             </div>
@@ -64,13 +74,11 @@
         </a>
       </div>
       @endforeach
-    @else
-
-      <div class="alert alert-warning" role="alert">
-          <strong>Sorry!</strong> No Product For Sale :(
-      </div>
-
     @endif
+  </div>
+  <div class="d-flex justify-content-center">
+
+    {{$all_available_product->links()}}
   </div>
 </div>
 

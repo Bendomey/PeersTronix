@@ -29,6 +29,12 @@ class ProductController extends Controller
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
 
+  public function search_product(Request $request){
+    $name = $request->product_name;
+    $search = Product::where('product_name','like',"$name%")->paginate(6);
+    return view('search',compact('search'));
+  }
+
   public function sell_product($id,$productName){
     $product = Product::where('product_name',$productName)->first();
     Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
