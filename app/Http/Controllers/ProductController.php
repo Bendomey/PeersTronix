@@ -13,6 +13,7 @@ class ProductController extends Controller
     $product->product_category = $request->product_category;
     $product->product_brand = $request->product_brand;
     $product->product_color = $request->product_color;
+    $product->product_rating = $request->product_rating;
     $product->brief_description = $request->brief_description;
     $product->description = $request->description;
     $product->additional_info = $request->additional_info;
@@ -34,9 +35,8 @@ class ProductController extends Controller
   }
 
   public function make_available($id){
-    var_dump($id);
-    // $products = Product::where('product_id',$id)->update(['product_availability'=>'available']);
-    // return back()->with('success',"The product has been uploaded successfully");
+    $products = Product::where('product_id',$id)->update(['product_availability'=>'available']);
+    return back()->with('success',"The product has been uploaded successfully");
   }
 
   public function edit_product(Request $request,$id){

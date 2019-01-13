@@ -117,8 +117,8 @@
                       </div>
                     </div>
                     <div class="row clearfix d-flex justify-content-start">
-                      <button type="reset" class="btn btn-info ml-2">Reset</button>
                       <button type="submit" class="btn btn-success">Upload</button>
+                      <button type="reset" class="btn btn-info ml-2">Reset</button>
                     </div>
                   </form>
               </div>
