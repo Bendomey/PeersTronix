@@ -141,47 +141,19 @@
                 <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Shop</span> </a>
                     <ul class="ml-menu">
                         <li><a href="{{route('dashboard/add_product')}}">Add Product</a></li>
-                        <li><a href="#">View Products</a></li>
-                        <li><a href="#">Edit Products</a></li>
+                        <li><a href="{{route('dashboard/view_products')}}">View Products</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </aside>
 
-    <section class="content home">
 
       @yield('dashboard_content')
 
-    </section>
 
-    {{--modal for profile picture--}}
 
-    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="title" id="defaultModalLabel">Update Profile Picture</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{asset('assets/images/profile_av.jpg')}}" class="w-50 rounded-circle" height="200" id="img" alt="{{Auth::user()->name}} profile picture">
-                    <form action="{{route('update_profile_img')}}" enctype="multipart/form-data" method="post" class="form">
-                        @csrf
-                        <input type="hidden" value="{{Auth::user()->id}}">
-                        <input type="file" name="profile_img" id="upload" class="form-control my-1" onchange="previewImage(event)">
-                        <button class="btn btn-default btn-round waves-effect">Save</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    {{--<button type="button" class="btn btn-default btn-round waves-effect">SAVE CHANGES</button>--}}
-                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
 
 

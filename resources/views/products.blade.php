@@ -41,58 +41,36 @@
     </form>
   </div>
   <div class="row">
+    @if(count($all_available_product))
+      @foreach($all_available_product as $product)
       <div class="col-lg-4 col-md-4 col-sm-6">
         <a href="{{url('single_product/1')}}" class="text-decoration-none">
           <div class="card shadow mb-5">
-            <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
+            <img src='{{asset("$product->thumb_picture")}}' height="300" class="card-img-top w-100" alt="">
             <div class="card-body">
-              <h4 class="card-title text-center">Samsung Galaxy</h4>
+              <h4 class="card-title text-center">{{$product->product_name}}</h4>
               <p class="d-flex justify-content-center">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
+                @for($i = 0; $i < $product->product_rating; $i++)
+                  <i class="fa fa-star"></i>
+                @endfor
+                @for($i = 0; $i < (5 - $product->product_rating); $i++)
+                  <i class="far fa-star"></i>
+                @endfor
+
               </p>
-              <p class="card-text text-center">Ghc 1,500</p>
+              <p class="card-text text-center">Ghc {{$product->product_price}}</p>
             </div>
           </div>
         </a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{url('single_product/2')}}" class="text-decoration-none">
-          <div class="card shadow mb-5">
-            <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
-            <div class="card-body">
-              <h4 class="card-title text-center">Samsung Galaxy</h4>
-              <p class="d-flex justify-content-center">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-of-life"></i>
-                <i class="fa fa-star-half-alt"></i>
-              </p>
-              <p class="card-text text-center">Ghc 1,500</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <a href="{{url('single_product/3')}}" class="text-decoration-none">
-          <div class="card shadow mb-5">
-            <img src="{{asset('images/4262501_sd--400x400.jpg')}}" height="300" class="card-img-top w-100" alt="">
-            <div class="card-body">
-              <h4 class="card-title text-center">Samsung Galaxy</h4>
-              <p class="d-flex justify-content-center">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half"></i>
-              </p>
-              <p class="card-text text-center">Ghc 1,500</p>
-            </div>
-          </div>
-        </a>
+      @endforeach
+    @else
+
+      <div class="alert alert-warning" role="alert">
+          <strong>Sorry!</strong> No Product For Sale :(
       </div>
 
+    @endif
   </div>
 </div>
 

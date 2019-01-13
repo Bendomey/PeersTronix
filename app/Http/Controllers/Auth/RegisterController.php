@@ -64,7 +64,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data, '')
+    protected function create(array $data)
     {
         // $originalImage = $data['profile_img'];
         // $newName = md5(microtime());

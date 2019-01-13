@@ -29,7 +29,16 @@ class ProductController extends Controller
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
 
+  public function sell_product($id){
+    $product = Product::where('product_id',$id)->update(['availability','sold']);
+    return redirect('dashboard/view_product');
+  }
 
+  public function edit_product(Request $request,$id){
+    $product = new Product;
+
+    return redirect('dashboard/view_product');
+  }
 
   protected function image($image){
       $name = md5(microtime());

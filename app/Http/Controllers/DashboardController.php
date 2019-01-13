@@ -8,7 +8,7 @@ use App\Contact;
 use App\User;
 use App\Product;
 use Illuminate\Support\Facades\Hash;
-use Image;
+use Intervention\Support\Facades\Image;
 
 
 class DashboardController extends Controller
@@ -20,7 +20,8 @@ class DashboardController extends Controller
 
     public function index(){
       $bookings = Contact::all()->count();
-      return view('dashboard.index')->with(['bookings' => $bookings]);
+      $available = Product::where('product_availability','available')->count();
+      return view('dashboard.index')->with(['bookings' => $bookings,'product_available'=>$available]);
     }
 
     public function profile_view(){
@@ -36,8 +37,13 @@ class DashboardController extends Controller
       return view('dashboard/add_product');
     }
 
+    public function edit_product_view($product_id){
+      $product_to_be_edited = Product::where('product_id',$product_id)->first();
+      return view('dashboard/edit_product',compact('product_to_be_edited'));
+    }
+
     public function view_products(){
-      $products = Product::where(['product_availability'=>'available']);
+      $products = Product::where(['product_availability'=>'available'])->get();
       return view('dashboard/view_product',compact('products'));
     }
 
@@ -76,7 +82,7 @@ class DashboardController extends Controller
         $NameForDatabase = 'profile_images/'.$newName.'.'.$originalImage->getClientOriginalExtension();
         $user->profile_img = $NameForDatabase;
         $image->save($NameForDatabase);
-        $user->update();
+        $user->save();
         return back()->with('success','Your Profile Picture was uploaded successfully');
 
     }
