@@ -131,11 +131,12 @@
   <div class="row">
       @foreach($some_product as $product)
         <div class="col-lg-4 col-md-4 col-sm-6">
-          <a href="{{url('single_product/1')}}" class="text-decoration-none">
             <div class="card shadow mb-5">
               <img src='{{asset("$product->thumb_picture")}}' height="300" class="card-img-top w-100" alt="">
               <div class="card-body">
-                <h4 class="card-title text-center">{{$product->product_name}}</h4>
+                <a href='{{url("single_product/$product->product_name")}}' class="text-decoration-none">
+                  <h4 class="card-title text-center">{{$product->product_name}}</h4>
+                </a>
                 <p class="d-flex justify-content-center">
                   @for($i = 0; $i < $product->product_rating; $i++)
                     <i class="fa fa-star"></i>
@@ -147,7 +148,6 @@
                 <p class="card-text text-center">Ghc 1,500</p>
               </div>
             </div>
-          </a>
         </div>
       @endforeach
     @endif
