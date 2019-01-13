@@ -93,15 +93,6 @@ class DashboardController extends Controller
       User::where('id',Auth::user()->id)->update([
           'profile_img'=>$this->profileUpdate($request->profile_img),
       ]);
-        // $user = User::find($request->id);
-        //
-        // $originalImage = $request->file('profile_img');
-        // $newName = md5(microtime());
-        // $image = Image::make($originalImage);
-        // $NameForDatabase = 'profile_images/'.$newName.'.'.$originalImage->getClientOriginalExtension();
-        // $user->profile_img = $NameForDatabase;
-        // $image->save($NameForDatabase);
-        // $user->save();
         return back()->with('success','Your Profile Picture was uploaded successfully');
 
     }

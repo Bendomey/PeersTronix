@@ -40,6 +40,7 @@ Route::group([],function(){
   Route::get('dashboard/sold_products','DashboardController@view_sold_products')->name('dashboard/sold_products');
   Route::get('sell_product/{id}/{productName}','ProductController@sell_product');
   Route::get('dashboard/edit_product/{product_id}','DashboardController@edit_product_view')->name('dashboard/edit_product/{product_id}');
+  Route::post('dashboard/update_product','ProductController@update_product')->name('update_product');
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');
   Route::get('delete_product/{id}','ProductController@destroy');

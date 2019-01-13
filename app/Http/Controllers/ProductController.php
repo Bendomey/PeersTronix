@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use App\Product;
 use App\BuyProduct;
@@ -27,7 +28,6 @@ class ProductController extends Controller
   }
 
   public function sell_product($id,$productName){
-    $buyer = BuyProduct::where('buyer_id',$id)->first();
     $product = Product::where('product_name',$productName)->first();
     Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
     BuyProduct::where('buyer_id',$id)->delete();
@@ -35,13 +35,14 @@ class ProductController extends Controller
   }
 
   public function make_available($id){
-    Product::where('product_id',$id)->where('product_availability','sold')->update(['product_availability'=>'available']);
+    // Product::where('product_id',$id)->update(['product_availability'=>'available']);
+    DB::update('update products set product_availability = ? where product_id = ?',['available',$id]);
     return back()->with('success',"The product has been uploaded successfully");
   }
 
-  public function edit_product(Request $request,$id){
-    $product = new Product;
-    return redirect('dashboard/view_product');
+  public function update_product(Request $request){
+    Product::where('product_id',$request->product_id)->update(['product_name'=>$request->product_name,'product_price'=>$request->price,'product_category'=>$request->category,'product_brand'=>$request->brand,'product_color'=>$request->color,'product_rating'=>$request->rating,'brief_description'=>$request->brief_description,'description'=>$request->description,'additional_info'=>$request->additional_info]);
+    return back()->with('success',"The product was updated successfully");
   }
 
 

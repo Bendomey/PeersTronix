@@ -51,9 +51,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
                                   @if(count($products) > 0)
                                     @foreach($products as $product)
+                                    <tr>
                                       <td>{{$product->product_name}}</td>
                                       <td>{{$product->product_category}}</td>
                                       <td>Ghc {{$product->product_price}}</td>
@@ -64,6 +64,7 @@
                                         <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
                                         <a href='{{url("delete_product/$product->product_id")}}'><button class="btn btn-danger"><i class="fa fa-trash mr-1"></i>Remove</button></a>
                                       </td>
+                                    </tr>
                                     @endforeach
 
                                     @else
@@ -71,7 +72,6 @@
                                         <strong>Sorry!</strong> No products Available :(
                                     </div>
                                     @endif
-                                </tr>
                             </tbody>
                         </table>
                     </div>

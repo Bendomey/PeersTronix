@@ -38,8 +38,9 @@
                     <h2><strong>Edit </strong> Product</h2>
                 </div>
                 <div class="body">
-                  <form class="form" action="#" method="post" enctype="multipart/form-data">
+                  <form class="form" action="{{route('update_product')}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="product_id" value="">
                     <div class="row clearfix">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -49,13 +50,13 @@
                         <div class="col-md-6">
                           <div class="input-group">
                               <span class="input-group-addon">Ghc</span>
-                              <input type="text" class="form-control date" placeholder="Price" name="product_price" value="{{$product_to_be_edited->product_price}}" required>
+                              <input type="text" class="form-control date" placeholder="Price" name="price" value="{{$product_to_be_edited->product_price}}" required>
                           </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                         <div class="col-md-6">
-                          <select class="form-control show-tick" name="product_category" value="{{$product_to_be_edited->product_category}}" required>
+                          <select class="form-control show-tick" name="category" value="{{$product_to_be_edited->product_category}}" required>
                             <option value="default">Category</option>
                             <option value="laptop">Laptop</option>
                             <option value="phone">Phone</option>
@@ -64,18 +65,18 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Brand" name="product_brand" value="{{$product_to_be_edited->product_brand}}" required>
+                              <input type="text" class="form-control" placeholder="Brand" name="brand" value="{{$product_to_be_edited->product_brand}}" required>
                           </div>
                         </div>
                     </div>
                     <div class="row clearfix">
                       <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Color" name="product_color" value="{{$product_to_be_edited->product_price}}">
+                            <input type="text" class="form-control" placeholder="Color" name="color" value="{{$product_to_be_edited->product_price}}">
                         </div>
                       </div>
                       <div class="col-md-6">
-                          <select class="form-control show-tick" name="product_rating" required value="{{$product_to_be_edited->product_rating}}">
+                          <select class="form-control show-tick" name="rating" required value="{{$product_to_be_edited->product_rating}}">
                             <option value="default">Rating</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -101,17 +102,6 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <textarea name="additional_info" rows="8" cols="80" class="form-control" placeholder="Additional Information" >{{$product_to_be_edited->additional_info}}</textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="thumb picture">Thumb Picture</label>
-                          <input type="file" name="thumb_picture" class="form-control mb-1" required>
-                          <label for="thumb picture">Other Pictures</label>
-                          <input type="file" name="image_one" class="form-control mb-1" value="{{$product_to_be_edited->image_one}}" required>
-                          <input type="file" name="image_two" class="form-control mb-1" required>
-                          <input type="file" name="image_three" class="form-control mb-1" required>
-                          <input type="file" name="image_four" class="form-control mb-1" required>
                         </div>
                       </div>
                     </div>

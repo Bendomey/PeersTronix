@@ -20,10 +20,10 @@ class Product extends Model
       'image_two',
       'image_three',
       'image_four',
-      'availability',
+      'product_availability',
       'product_category',
     ];
 
-    protected $guarded = ['product_id','created_at','updated_at'];
+    protected $hidden = ['product_id','created_at','updated_at'];
 
 }
