@@ -8,7 +8,7 @@ use App\Contact;
 use App\User;
 use App\Product;
 use Illuminate\Support\Facades\Hash;
-use Image;
+use Intervention\Support\Facades\Image;
 
 
 class DashboardController extends Controller
@@ -76,7 +76,7 @@ class DashboardController extends Controller
         $NameForDatabase = 'profile_images/'.$newName.'.'.$originalImage->getClientOriginalExtension();
         $user->profile_img = $NameForDatabase;
         $image->save($NameForDatabase);
-        $user->update();
+        $user->save();
         return back()->with('success','Your Profile Picture was uploaded successfully');
 
     }
