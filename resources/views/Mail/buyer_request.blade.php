@@ -1,8 +1,8 @@
 <p>Hello {{$data['owner_name']}}</p>
 <p>{{$data['buyer']}} is interested in buying this product, {{$data['product']}} from your e-shop</p>
-<h5>Details</h5>
+<h4>Details</h4>
 <p>
-  Contact : {{$data['contact']}}
+  <b>Contact :</b> {{$data['contact']}},
   <br>
-  Location : {{$data['location']}}
+  <b>Location :</b> {{$data['location']}}
 </p>
