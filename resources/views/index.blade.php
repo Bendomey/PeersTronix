@@ -33,8 +33,8 @@
           <img src="{{asset('images/beautiful-blur-casual-9357560.jpg')}}" alt="third" class="d-block w-100" style="height: 100vh;">
           <div class="carousel-caption d-none d-md-block">
             <h1 class="displa-4 text-light" style="font-weight: 900;">Professional Customer Service</h1>
-            <p style="font-weight: 900;">We provide extensive support for every customer</p>
-            <a href="#"><button type="button" name="button" class="btn btn-lg btn-primary">VIEW MORE <i class="fa fa-arrow-right"></i> </button></a>
+            <p style="font-weight: 900;">We provide extensive support for every customer, contact us</p>
+            <a href="{{route('contact_us')}}"><button type="button" name="button" class="btn btn-lg btn-primary">VIEW MORE <i class="fa fa-arrow-right"></i> </button></a>
           </div>
         </div>
       </div>
@@ -52,136 +52,64 @@
 
 
   <section class="mb-5">
-    <h1 class="display-4 text-center offer">WHAT WE OFFER</h1>
-    <!-- owl carousel -->
-    <div class="container-fluid">
-      <div class="owl-carousel owl-theme hi">
-        <div class="item">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" alt="first" src="{{asset('images/laptopRepair.jpg')}}">
+    <h1 class="display-5 mb-5 text-center offer">WHAT WE OFFER</h1>
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-4">
+          <div class="card shadow mb-md-5 mb-sm-5">
+            <img src="images/laptopRepair.jpg" height="290" alt="first" class="card-img-top">
             <div class="card-body">
-              <h4 class="card-title profession">Laptop Repair</h4>
-              <p class="card-text">
-                We offer affordable Laptop repair services to individuals and corporate clients.
-              </p>
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                  <i class="fa fa-3x fa-bug"></i>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8">
+                  <h4 class="card-title">Virus removal</h4>
+                  <p class="card-text">Remove any virus with our help</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" alt="first" src="{{asset('images/networkRepair.jpg')}}">
+        <div class="col-lg-4">
+          <div class="card shadow">
+            <img src="images/networkRepair.jpg" height="290" alt="first" class="card-img-top">
             <div class="card-body">
-              <h4 class="card-title profession">Network Support</h4>
-              <p class="card-text">
-                We provide extensive 24/7 remote support via netowrks to our customers
-              </p>
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                  <i class="fa fa-3x fa-database my-1"></i>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8">
+                  <h4 class="card-title">Data Recovery</h4>
+                  <p class="card-text">Helping you restore your data</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" alt="first" src="{{asset('images/dataRepair.jpg')}}">
+        <div class="col-lg-4">
+          <div class="card shadow">
+            <img src="images/networkRepair.jpg" height="290" alt="first" class="card-img-top">
             <div class="card-body">
-              <h4 class="card-title profession">Data Recovery</h4>
-              <p class="card-text">
-                We offer affordable Laptop repair services to individuals and corporate clients.
-              </p>
+              <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                  <i class="fa fa-3x fa-database my-1"></i>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8">
+                  <h4 class="card-title">Data Recovery</h4>
+                  <p class="card-text">Helping you restore your data</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" alt="first" src="{{asset('images/dataRepair.jpg')}}">
-            <div class="card-body">
-              <h4 class="card-title profession">Data Recovery</h4>
-              <p class="card-text">
-                We offer affordable Laptop repair services to individuals and corporate clients.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="owl-dots">
-          <div class="owl-dot active"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-          <div class="owl-dot"><span></span></div>
-        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="{{route('services')}}"><button class="btn btn-lg btn-ouline-dark">View More</button></a>
       </div>
     </div>
   </section>
 
-  <section class="mb-5" id="OurTeam">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="container">
-            <h1 class="offer mb-3 display-4">OUR TEAM</h1>
-            <h6 class="profession">PROFESSIONAL PC REPAIR TEAM</h6>
-            <p style="color: grey">Since our establishment, we have gathered a team of dedicated PC repair professionals.</p>
-            <div class="">
-              <a href="{{route('contact_us')}}"> <button type="button" name="button" class="btn btn-lg btn-light mess" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-envelope"></i> </button></a>
-              <button type="button" name="button" class="btn btn-lg btn-light" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-arrow-left"></i> </button>
-              <button type="button" name="button" class="btn btn-lg btn-light" style="border-radius: 0px; border: 2px solid;"><i class="fa fa-arrow-right"></i> </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-9 col-md-6 col-sm-6">
-          <div class="owl-carousel owl-theme hm">
-            <div class="item">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top teamImg" alt="first" src="{{asset('images/adult-beard-blur-927022.jpg')}}">
-                <div class="card-body">
-                  <h4 class="card-title">John Doe</h4>
-                  <p class="card-text profession">
-                    General Manager
-                  </p>
-                </div>
-                <div class="d-flex justify-content-around">
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top teamImg" alt="first" src="{{asset('images/beautiful-blur-casual-935756.jpg')}}">
-                <div class="card-body">
-                  <h4 class="card-title">Jane Doe</h4>
-                  <p class="card-text profession">
-                    Customer Service Manager
-                  </p>
-                </div>
-                <div class="d-flex justify-content-around">
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top teamImg" alt="first" src="{{asset('images/business-care-clinic-1282308.jpg')}}">
-                <div class="card-body">
-                  <h4 class="card-title">Jack Doe</h4>
-                  <p class="card-text profession">
-                    Field Technician
-                  </p>
-                </div>
-                <div class="d-flex justify-content-around">
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-facebook-f"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-twitter"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-instagram"></i> </button></a>
-                  <a href="#"> <button type="button" name="button" class="btn btn-md btn-light mess" style="border-radius: 0px;"><i class="fab fa-google"></i> </button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 

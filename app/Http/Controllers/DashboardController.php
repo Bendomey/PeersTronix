@@ -32,7 +32,7 @@ class DashboardController extends Controller
     }
 
     public function booking_view(){
-      $all_booking = Contact::where('accept','0')->get();
+      $all_booking = Contact::where('accept','0')->paginate(15);
       return view('dashboard/bookings',compact('all_booking'));
     }
 
@@ -46,17 +46,17 @@ class DashboardController extends Controller
     }
 
     public function view_products(){
-      $products = Product::where(['product_availability'=>'available'])->get();
+      $products = Product::where(['product_availability'=>'available'])->paginate(15);
       return view('dashboard/view_product',compact('products'));
     }
 
     public function view_sold_products(){
-      $products = Product::where('product_availability','sold')->get();
+      $products = Product::where('product_availability','sold')->paginate(15);
       return view('dashboard/sold_product',compact('products'));
     }
 
     public function buyer_info_view(){
-      $all_info = BuyProduct::all();
+      $all_info = BuyProduct::paginate(15);
       return view('dashboard/buyer_info',compact('all_info'));
     }
 

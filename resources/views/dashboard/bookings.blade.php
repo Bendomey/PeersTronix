@@ -78,6 +78,9 @@
                                 @endif
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                          {{$all_booking->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
