@@ -20,7 +20,8 @@ class DashboardController extends Controller
 
     public function index(){
       $bookings = Contact::all()->count();
-      return view('dashboard.index')->with(['bookings' => $bookings]);
+      $available = Product::where('product_availability','available')->count();
+      return view('dashboard.index')->with(['bookings' => $bookings,'product_available'=>$available]);
     }
 
     public function profile_view(){
