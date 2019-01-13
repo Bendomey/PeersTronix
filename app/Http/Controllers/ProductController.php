@@ -24,10 +24,15 @@ class ProductController extends Controller
     $product->save();
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
-  public function sell_product($id){
-    $product = Product::where('product_id',$id)->update(['availability','sold']);
-    return redirect('dashboard/view_product');
+
+  public function sell_product($id,$productName){
+    $buyer = BuyProduct::where('buyer_id',$id)->first();
+    $product = Product::where('product_name',$productName)->first();
+    Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
+    BuyProduct::where('buyer_id',$id)->delete();
+    return back()->with('success',"$product->product_name has been sold");
   }
+
   public function edit_product(Request $request,$id){
     $product = new Product;
     return redirect('dashboard/view_product');

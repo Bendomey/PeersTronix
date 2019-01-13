@@ -56,7 +56,7 @@
                                       <td>{{$buyer->buyer_location}}</td>
                                       <td>{{$buyer->product_name}}</td>
                                       <td>
-                                        <a href='#'><button class="btn btn-success"><i class="fa fa-check"></i> Confirm</button></a>
+                                        <a href='{{url("sell_product/$buyer->buyer_id/$buyer->product_name")}}'><button class="btn btn-success"><i class="fa fa-check"></i> Sell</button></a>
                                         <a href='{{url("delete_buyer_request/$buyer->buyer_id")}}'><button class="btn btn-danger"><i class="fa fa-check mr-2"></i>Remove</button></a>
                                       </td>
                                     </tr>
@@ -75,5 +75,26 @@
     </div>
   </div>
 </section>
+
+{{--modal for deleting request--}}
+
+<div class="modal fade" id="viewProduct" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4>Product Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span></span>'s reuest?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @stop

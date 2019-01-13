@@ -100,7 +100,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Product Name</label>
-                            <input type="text" class="form-control" readonly>
+                            <input type="text" class="form-control" name="product_name" readonly>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -114,7 +114,7 @@
                 <div class="row clearfix">
                     <div class="col-md-6">
                       <label for="Category">Category</label>
-                      <input type="text" name="product_category" readonly>
+                      <input type="text" name="product_category" class="form-control" readonly>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
@@ -132,7 +132,7 @@
                   </div>
                   <div class="col-md-6">
                       <label for="Rating">Rating</label>
-                      <input type="text" name="product_rating" readonly>
+                      <input type="text" name="product_rating" class="form-control" readonly>
                   </div>
                 </div>
                 <div class="row clearfix">

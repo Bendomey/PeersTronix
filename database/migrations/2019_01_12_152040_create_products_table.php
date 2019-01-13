@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('product_color')->nullable();
             $table->enum('product_category',['laptop','phone','computer_part']);
             $table->enum('product_rating',['1','2','3','4','5']);
-            $table->enum('product_availability',['available','requested_for','sold'])->default('available');
+            $table->enum('product_availability',['available','sold'])->default('available');
             $table->string('brief_description');
             $table->string('description');
             $table->string('additional_info')->nullable();

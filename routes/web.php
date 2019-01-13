@@ -37,7 +37,7 @@ Route::group([],function(){
   Route::get('dashboard/add_product','DashboardController@add_product_view')->name('dashboard/add_product');
   Route::post('dashboard/add_product/phase_1','ProductController@add_product')->name('dashboard/add_product/phase_1');
   Route::get('dashboard/view_products','DashboardController@view_products')->name('dashboard/view_products');
-  Route::post('dashboard/sell_product/{id}','ProductController@sell_product');
+  Route::get('sell_product/{id}/{productName}','ProductController@sell_product');
   Route::get('dashboard/edit_product/{product_id}','DashboardController@edit_product_view')->name('dashboard/edit_product/{product_id}');
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');

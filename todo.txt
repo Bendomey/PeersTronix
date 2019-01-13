@@ -2,3 +2,4 @@
 - font for the single_porduct name
 - updating of the profile image
 - with the enum for availability, remove requested_for from that and migrate
+- repair showing the images in the modal view_products view

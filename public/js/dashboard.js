@@ -35,6 +35,9 @@ $(document).ready(function(){
         $('.confirmPass').show();
     });
 
+    // for deleting modal in buyer_info_view
+    $('.deleteView')
+
 
     // for view modal in the view_product
     $('.view_product').click(function(){
@@ -49,7 +52,6 @@ $(document).ready(function(){
       $('#image_one').attr('src',`${data.image_two}`);
       $('#image_two').attr('src',`${data.image_three}`);
       $('#image_four').attr('src',`${data.image_four}`);
-      $('#viewProduct').modal(show);
+      $('#viewProduct').modal('show');
     });
-alert('hello')
 });
