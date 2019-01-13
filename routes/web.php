@@ -37,11 +37,13 @@ Route::group([],function(){
   Route::get('dashboard/add_product','DashboardController@add_product_view')->name('dashboard/add_product');
   Route::post('dashboard/add_product/phase_1','ProductController@add_product')->name('dashboard/add_product/phase_1');
   Route::get('dashboard/view_products','DashboardController@view_products')->name('dashboard/view_products');
+  Route::get('dashboard/sold_products','DashboardController@view_sold_products')->name('dashboard/sold_products');
   Route::get('sell_product/{id}/{productName}','ProductController@sell_product');
   Route::get('dashboard/edit_product/{product_id}','DashboardController@edit_product_view')->name('dashboard/edit_product/{product_id}');
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');
   Route::get('delete_product/{id}','ProductController@destroy');
+  Route::get('make_available/{id}','ProductController@make_available');
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');

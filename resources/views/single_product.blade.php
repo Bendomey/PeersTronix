@@ -61,6 +61,15 @@
       <h1>{{$one_product->product_name}}</h1>
       <h4>Ghc {{$one_product->product_price}}</h4>
       <p>{{$one_product->brief_description}}</p>
+      <p>
+        <!-- <h5>Product Rating</h5> -->
+      @for($i = 0; $i < $one_product->product_rating; $i++)
+        <i class="fa fa-star" style="color: gold"></i>
+      @endfor
+      @for($i = 0; $i < (5 - $one_product->product_rating); $i++)
+        <i class="far fa-star" style="color: gold"></i>
+      @endfor
+    </p>
       <a href="#" class="btn btn-dark btn-lg btn-block buy"><i class="fa fa-cart-arrow-down"></i> Purchase</a>
       <p class="my-3"><strong>Category :</strong>{{$one_product->product_category}} </p>
       <form class="form buyProductForm" action="{{route('buy_product')}}" method="post">

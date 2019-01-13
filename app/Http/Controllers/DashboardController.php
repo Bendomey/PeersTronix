@@ -48,6 +48,11 @@ class DashboardController extends Controller
       return view('dashboard/view_product',compact('products'));
     }
 
+    public function view_sold_products(){
+      $products = Product::where('product_availability','sold')->get();
+      return view('dashboard/sold_product',compact('products'));
+    }
+
     public function buyer_info_view(){
       $all_info = BuyProduct::all();
       return view('dashboard/buyer_info',compact('all_info'));

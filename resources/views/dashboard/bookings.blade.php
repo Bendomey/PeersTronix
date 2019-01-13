@@ -58,7 +58,9 @@
                                       @endforeach
                                     @else
 
-                                    alerts
+                                    <div class="alert alert-warning" role="alert">
+                                        <strong>Sorry!</strong> No bookings Available :(
+                                    </div>
 
                                     @endif
                                 </tr>

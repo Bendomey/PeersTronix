@@ -33,6 +33,12 @@ class ProductController extends Controller
     return back()->with('success',"$product->product_name has been sold");
   }
 
+  public function make_available($id){
+    var_dump($id);
+    // $products = Product::where('product_id',$id)->update(['product_availability'=>'available']);
+    // return back()->with('success',"The product has been uploaded successfully");
+  }
+
   public function edit_product(Request $request,$id){
     $product = new Product;
     return redirect('dashboard/view_product');
