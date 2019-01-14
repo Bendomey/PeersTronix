@@ -23,6 +23,9 @@ Route::group([],function(){
   Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
   Route::get('products','ViewController@products')->name('products');
+  Route::get('products/laptops','ViewController@laptop_product')->name('laptop');
+  Route::get('products/phones','ViewController@phone_product')->name('phone');
+  Route::get('products/computer_parts','ViewController@computer_part_product')->name('computer_part');
   Route::get('single_product/{id}','ViewController@single_product')->name('single_product/{id}');
   Route::post('buy_product','ProductController@buy_product')->name('buy_product');
   Route::get('search_results','ProductController@search_product')->name('search_results');

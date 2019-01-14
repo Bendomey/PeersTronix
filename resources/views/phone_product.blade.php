@@ -10,7 +10,7 @@
       <div class="col-12">
         <div class="text-center">
           <blockquote>
-            <h1 class="text-light" style="font-weight: 900">Shop</h1>
+            <h1 class="text-light" style="font-weight: 900">Phones</h1>
           </blockquote>
         </div>
       </div>
@@ -21,8 +21,9 @@
 <div class="mb-5">
 <nav aria-label="breadcrumb">
 <ol class="breadcrumb breadcrumb-dot d-flex justify-content-center">
-<li class="breadcrumb-item"><a href="PeersTronix.html" class="text-dark">HOME</a></li>
-<li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">Shop</li>
+  <li class="breadcrumb-item"><a href="{{route('/')}}" class="text-dark">HOME</a></li>
+<li class="breadcrumb-item"><a href="{{route('products')}}" class="text-dark">Shop</a></li>
+<li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">Phones</li>
 </ol>
 </nav>
 </div>
@@ -46,12 +47,12 @@
     </form>
   </div>
   <div class="row mb-5">
-  <div class="col-lg-3 mb-5">
+  <div class="col-lg-3">
     <h4>CATEGORIES</h4>
     <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
-      <a class="nav-link active"   href="{{route('products')}}" role="tab"  aria-selected="true">All Type</a>
+      <a class="nav-link"   href="{{route('products')}}" role="tab"  aria-selected="false">All Type</a>
       <a class="nav-link"   href="{{route('laptop')}}" role="tab"  aria-selected="false">Laptops</a>
-      <a class="nav-link"   href="{{route('phone')}}" role="tab"  aria-selected="false">Phones</a>
+      <a class="nav-link active"   href="{{route('phone')}}" role="tab"  aria-selected="true">Phones</a>
       <a class="nav-link"  href="{{route('computer_part')}}" role="tab"  aria-selected="false">Computer Parts</a>
     </div>
   </div>
@@ -98,5 +99,6 @@
 
 
 </div>
+
 
 @stop
