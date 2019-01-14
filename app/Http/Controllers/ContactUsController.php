@@ -10,6 +10,7 @@ use App\Mail\bookingRequestAccepted;
 
 class ContactUsController extends Controller
 {
+
     public function createContact(Request $req) {
       // save details of  people (contact us)
 

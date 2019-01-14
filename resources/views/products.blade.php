@@ -43,14 +43,14 @@
         <option value="high_to_low">Sort By Price: High To Low</option>
       </select>
     </form>
-    @if(count($all_available_product) == 0)
-
-      <div class="alert alert-warning" role="alert">
-        <strong>Sorry!</strong> No Product For Sale :(
-      </div>
-
-    @endif
   </div>
+  @if(count($all_available_product) == 0)
+
+    <div class="alert alert-warning" role="alert">
+      <strong>Sorry!</strong> No Product For Sale :(
+    </div>
+
+  @endif
   <div class="row mb-5">
     @if(count($all_available_product) > 0)
       @foreach($all_available_product as $product)
