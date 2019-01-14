@@ -29,9 +29,8 @@ class SellProduct extends Mailable
      */
     public function build()
     {
-        return $this->from('info@peerstronix.com')
-                    ->subject('Appreciation From PeersTronix')
+        return $this->subject('Appreciation From PeersTronix')
                     ->view('Mail/sell_product')
-                    ->with('data',$data);
+                    ->with('data',$this->data);
     }
 }

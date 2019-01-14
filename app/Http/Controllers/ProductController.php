@@ -39,15 +39,15 @@ class ProductController extends Controller
   public function sell_product($id,$productName){
     $product = Product::where('product_name',$productName)->first();
     Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
-    $customer = BuyProduct::where('product_id',$id)->first();
+    $customer = BuyProduct::where('buyer_id',$id)->first();
 
     $data = array(
       'customer_name'=> $customer->customer_name
     );
 
-    Mail::to($customer->customer_email)->send(new SellProduct($data));
+    Mail::to($customer->buyer_email)->send(new SellProduct($data));
 
-    $customer->delete();
+    BuyProduct::where('buyer_id',$id)->delete();
     return back()->with('success',"$product->product_name has been sold");
   }
 
