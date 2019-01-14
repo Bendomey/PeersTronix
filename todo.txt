@@ -1,6 +1,5 @@
 - fix the collapse in the serices Page
 - font for the single_porduct name
-- updating of the profile image
 - repair showing the images in the modal view_products view
 - work on bringing it back available ,the sold product
 - work on the edit_product

@@ -25,6 +25,7 @@ Route::group([],function(){
   Route::get('products','ViewController@products')->name('products');
   Route::get('single_product/{id}','ViewController@single_product')->name('single_product/{id}');
   Route::post('buy_product','ProductController@buy_product')->name('buy_product');
+  Route::get('search_results','ProductController@search_product')->name('search_results');
 });
 
 Route::group([],function(){
@@ -48,6 +49,8 @@ Route::group([],function(){
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
+Route::get('delete_contact/{id}','ContactUsController@destroy');
+Route::get('accept_booking/{id}','ContactUsController@accept_booking');
 
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');

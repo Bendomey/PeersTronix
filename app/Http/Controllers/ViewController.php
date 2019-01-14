@@ -30,7 +30,7 @@ class ViewController extends Controller
   }
 
   public function products(){
-    $all_available_product = Product::where('product_availability','available')->get();
+    $all_available_product = Product::where('product_availability','available')->paginate(12);
     return view('products',compact('all_available_product'));
   }
 

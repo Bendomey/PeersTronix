@@ -20,6 +20,18 @@
   </div>
 
   <div class="container-fluid">
+
+    @if(Session::has('success'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations!</strong> {!! Session::get('success') !!}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+    @endif
+
     <div class="row clearfix">
         <div class="col-lg-12">
             <div class="card">
@@ -37,9 +49,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                  @if(count($all_booking) > 0)
-                                      @foreach($all_booking as $booking)
+                                @if(count($all_booking) > 0)
+                                  @foreach($all_booking as $booking)
+                                    <tr>
                                       <td>{{$booking->customer_full_name}}</td>
                                       <td>
                                         @if($booking == null)
@@ -52,20 +64,23 @@
                                       <td>{{$booking->customer_phone}}</td>
                                       <td>{{$booking->message}}</td>
                                       <td>
-                                        <button class="btn btn-success"><i class="fa fa-check"></i> Attend</button>
-                                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        <a href="{{url('accept_booking')}}"><button class="btn btn-success"><i class="fa fa-check"></i> Accept</button></a>
+                                        <a href="{{url('delete_contact/$booking->id')}}"><button class="btn btn-danger"><i class="fa fa-trash"></i> Decline</button></a>
                                       </td>
-                                      @endforeach
-                                    @else
+                                    </tr>
+                                  @endforeach
+                                @else
 
                                     <div class="alert alert-warning" role="alert">
                                         <strong>Sorry!</strong> No bookings Available :(
                                     </div>
 
-                                    @endif
-                                </tr>
+                                @endif
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                          {{$all_booking->links()}}
+                        </div>
                     </div>
                 </div>
             </div>

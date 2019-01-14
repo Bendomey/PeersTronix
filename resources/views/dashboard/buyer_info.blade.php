@@ -68,6 +68,9 @@
                               @endif
                             </tbody>
                         </table>
+                        <div class="d-flex justify-content-center">
+                          {{$all_info->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
