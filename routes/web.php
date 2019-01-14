@@ -45,7 +45,7 @@ Route::group([],function(){
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');
   Route::get('delete_product/{id}','ProductController@destroy');
-  Route::get('make_available/{id}','ProductController@make_available');
+  Route::get('make_available/{id}','ProductController@make_available')->name('make_available/{id}');
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');

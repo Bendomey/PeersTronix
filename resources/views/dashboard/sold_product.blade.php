@@ -58,7 +58,7 @@
                                       <td>{{$product->product_brand}}</td>
                                       <td>{{$product->product_rating}}</td>
                                       <td>
-                                        <a href="{{url('make_available/$product->product_id')}}"><button class="btn btn-success">Make Available </button> </a>
+                                        <a href='{{url("make_available/$product->product_id")}}'><button class="btn btn-success">Make Available </button> </a>
                                         <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
                                         <a href='{{url("delete_product/$product->product_id")}}'><button class="btn btn-danger"><i class="fa fa-trash mr-1"></i></button></a>
                                       </td>

@@ -64,8 +64,8 @@
                                       <td>{{$booking->customer_phone}}</td>
                                       <td>{{$booking->message}}</td>
                                       <td>
-                                        <a href="{{url('accept_booking')}}"><button class="btn btn-success"><i class="fa fa-check"></i> Accept</button></a>
-                                        <a href="{{url('delete_contact/$booking->id')}}"><button class="btn btn-danger"><i class="fa fa-trash"></i> Decline</button></a>
+                                        <a href='{{url("accept_booking/$booking->customer_id")}}'><button class="btn btn-success"><i class="fa fa-check"></i></button></a>
+                                        <a href='{{url("delete_contact/$booking->customer_id")}}'><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
                                       </td>
                                     </tr>
                                   @endforeach

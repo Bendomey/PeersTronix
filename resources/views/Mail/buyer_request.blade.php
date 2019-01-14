@@ -4,5 +4,6 @@
 <p>
   <b>Contact :</b> {{$data['contact']}},
   <br>
+  <b>Email :</b> {{$data['email']}}
   <b>Location :</b> {{$data['location']}}
 </p>
