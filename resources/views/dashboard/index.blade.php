@@ -52,11 +52,11 @@
                 <div class="body">
                     <div class="row">
                         <div class="col-7">
-                            <h5 class="m-t-0">Sales</h5>
-                            <p class="text-small">Sales For This Month</p>
+                            <h5 class="m-t-0">Buyer's Request</h5>
+                            <p class="text-small">Request for today</p>
                         </div>
                         <div class="col-5 text-right">
-                            <h2 class="">12%</h2>
+                            <h2 class="">{{$buyer_request}}</h2>
                         </div>
                     </div>
                 </div>

@@ -3,3 +3,4 @@
 - repair showing the images in the modal view_products view
 - work on bringing it back available ,the sold product
 - work on the edit_product
+- add the custom-file-input

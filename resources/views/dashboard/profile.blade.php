@@ -28,7 +28,11 @@
                     <h4 class="m-t-10">{{Auth::user()->name}}</h4>
                 </div>
                 <div class="member-img">
-                    <img src='{{asset(Auth::user()->profile_img)}}' class="rounded-circle" alt="profile-image">
+                  @if(Auth::user()->profile_img != null)
+                    <img src='{{asset(Auth::user()->profile_img)}}' class="rounded-circle w-100" alt="profile-image">
+                  @else
+                  <img src='{{asset("images/defaultProfile.png")}}' class="rounded-circle" alt="profile-image">
+                  @endif
                 </div>
                 <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#defaultModal">Change</button>
 

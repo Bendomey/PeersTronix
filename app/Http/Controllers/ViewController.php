@@ -34,6 +34,21 @@ class ViewController extends Controller
     return view('products',compact('all_available_product'));
   }
 
+  public function laptop_product(){
+    $all_available_product = Product::where('product_category','laptop')->where('product_availability','available')->paginate(12);
+    return view('laptop_product',compact('all_available_product'));
+  }
+
+  public function phone_product(){
+    $all_available_product = Product::where('product_category','phone')->where('product_availability','available')->paginate(12);
+    return view('phone_product',compact('all_available_product'));
+  }
+
+  public function computer_part_product(){
+    $all_available_product = Product::where('product_category','computer_part')->where('product_availability','available')->paginate(12);
+    return view('computer_part_product',compact('all_available_product'));
+  }
+
   public function single_product($id){
     $one_product = Product::where('product_name',$id)->first();
     $some_product = Product::where('product_name','!=',$id)->where(['product_availability'=>'available','product_category'=>$one_product->product_category])->take(3)->get();

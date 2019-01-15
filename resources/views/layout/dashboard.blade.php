@@ -125,7 +125,11 @@
             <ul class="list">
                 <li>
                     <div class="user-info">
-                        <div class="image"><a href="{{route('dashboard/profile')}}"><img src='{{asset((Auth::user()->profile_img == null)? "images/defaultProfile.jpg" : Auth::user()->profile_img)}}' class="w-100" height="200" alt="User"></a></div>
+                      @if(Auth::user()->profile_img != null)
+                        <div class="image"><a href="{{route('dashboard/profile')}}"><img src='{{asset(Auth::user()->profile_img)}}' class="w-100" height="200" alt="User"></a></div>
+                      @else
+                        <div class="image"><a href="{{route('dashboard/profile')}}"><img src="{{asset('images/defaultProfile.png')}}" class="w-100" height="200" alt="User"></a></div>
+                      @endif
                         <div class="detail">
                             <h4>{{Auth::user()->name}}</h4>
                             <small>{{Auth::user()->position}}</small>

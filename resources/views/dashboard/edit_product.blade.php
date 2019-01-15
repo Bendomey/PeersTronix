@@ -40,7 +40,7 @@
                 <div class="body">
                   <form class="form" action="{{route('update_product')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="product_id" value="">
+                    <input type="hidden" name="product_id" value="{{$product_to_be_edited->product_id}}">
                     <div class="row clearfix">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -56,7 +56,8 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-md-6">
-                          <select class="form-control show-tick" name="category" value="{{$product_to_be_edited->product_category}}" required>
+                          <select class="form-control show-tick" name="category" required>
+                            <option value="" selected hidden>{{$product_to_be_edited->product_category}}</option>
                             <option value="default">Category</option>
                             <option value="laptop">Laptop</option>
                             <option value="phone">Phone</option>
@@ -77,6 +78,7 @@
                       </div>
                       <div class="col-md-6">
                           <select class="form-control show-tick" name="rating" required value="{{$product_to_be_edited->product_rating}}">
+                            <option value="" selected hidden>{{$product_to_be_edited->product_rating}}</option>
                             <option value="default">Rating</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
