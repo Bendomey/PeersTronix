@@ -38,11 +38,12 @@ class ProductController extends Controller
         'brand'=>$request->product_brand,
         'address'=>"single_product/" . $request->product_name
       );
-
+      if(count($newsletter) > 0){
         Mail::to($newsletter)->send(new sendNewsletter($data));
+      }
 
     } catch (Swift_IoException $e) {
-      return back()->with('error',"$request->product_name was not uploaded successfully");
+      return back()->with('error',"$request->product_name was not uploaded due to network connectivity problem");
     }
 
     $product->save();
