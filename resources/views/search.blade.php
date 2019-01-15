@@ -30,7 +30,7 @@
   <h1>Search Results</h1>
   <form class="form" action="{{route('search_results')}}" method="get">
     <div class="form-group mb-5">
-    <input type="search" name="product_name" class="form-control form-control-lg mb-3">
+    <input type="search" name="product_name" class="form-control form-control-lg mb-3" value="{{$name}}">
     <button type="submit" class="btn btn-dark btn-lg"><i class="fa fa-search"></i> Search</button>
   </div>
   </form>

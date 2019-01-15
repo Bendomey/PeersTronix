@@ -4,9 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\sendNewsletter;
 use App\Mail\BuyerRequest;
 use App\Product;
 use App\BuyProduct;
+use App\Newsletter;
 class ProductController extends Controller
 {
   public function add_product(Request $request){
@@ -25,6 +27,25 @@ class ProductController extends Controller
     $product->image_two = $this->image($request->image_two);
     $product->image_three = $this->image($request->image_three);
     $product->image_four = $this->image($request->image_four);
+    $newsletter = Newsletter::all('email');
+
+    try {
+      $data = array(
+        'product_name'=> $request->product_name,
+        'category'=>$request->product_category,
+        'price'=>$request->product_price,
+        'brand'=>$request->product_brand,
+        'address'=>"single_product/" . $request->product_name
+      );
+
+      foreach ($newsletter as $person) {
+        Mail::to($person)->send(new sendNewsletter($data));
+      }
+
+    } catch (Swift_IoException $e) {
+      return back()->with('error',"$request->product_name was not uploaded successfully");
+    }
+
     $product->save();
     return back()->with('success',"$request->product_name was uploaded successfully");
   }
@@ -32,7 +53,7 @@ class ProductController extends Controller
   public function search_product(Request $request){
     $name = $request->product_name;
     $search = Product::where('product_name','like',"$name%")->paginate(6);
-    return view('search',compact('search'));
+    return view('search',compact('search',$search))->with('name',$name);
   }
 
   public function sell_product($id,$productName){
@@ -44,7 +65,6 @@ class ProductController extends Controller
 
   public function make_available($id){
     Product::where('product_id',$id)->update(['product_availability'=>'available']);
-    // DB::update('update products set product_availability = ? where product_id = ?',['available',$id]);
     return back()->with('success',"The product has been uploaded successfully");
   }
 

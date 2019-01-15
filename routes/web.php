@@ -26,6 +26,7 @@ Route::group([],function(){
   Route::get('single_product/{id}','ViewController@single_product')->name('single_product/{id}');
   Route::post('buy_product','ProductController@buy_product')->name('buy_product');
   Route::get('search_results','ProductController@search_product')->name('search_results');
+  Route::post('newsletter/phase_1','NewsletterController@create')->name('create');
 });
 
 Route::group([],function(){

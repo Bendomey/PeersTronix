@@ -31,6 +31,7 @@
   <div class="row d-flex justify-content-between mb-5">
     <p style="color: grey">Showing all</p>
     <form class="form-inline" action="{{route('search_results')}}" method="get">
+      @csrf
       <input type="search" name="product_name" class="form-control form-control-lg mr-2">
       <button type="submit" class="btn btn-dark btn-lg">Search</button>
     </form>
