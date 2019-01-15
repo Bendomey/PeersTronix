@@ -10,6 +10,7 @@ use App\Mail\bookingRequestAccepted;
 
 class ContactUsController extends Controller
 {
+
     public function createContact(Request $req) {
       // save details of  people (contact us)
       $data = array(
@@ -39,7 +40,7 @@ class ContactUsController extends Controller
 
       Mail::to($booking->customer_email)->send(new bookingRequestAccepted($data));
 
-      return back()->with('success',"$booking->customer_full_name\'s request has been accepted");
+      return back()->with('success',"$booking->customer_full_name's request has been accepted");
     }
 
     public function destroy($id){

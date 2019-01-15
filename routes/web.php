@@ -23,6 +23,9 @@ Route::group([],function(){
   Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
   Route::get('products','ViewController@products')->name('products');
+  Route::get('products/laptops','ViewController@laptop_product')->name('laptop');
+  Route::get('products/phones','ViewController@phone_product')->name('phone');
+  Route::get('products/computer_parts','ViewController@computer_part_product')->name('computer_part');
   Route::get('single_product/{id}','ViewController@single_product')->name('single_product/{id}');
   Route::post('buy_product','ProductController@buy_product')->name('buy_product');
   Route::get('search_results','ProductController@search_product')->name('search_results');
@@ -46,7 +49,7 @@ Route::group([],function(){
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');
   Route::get('delete_product/{id}','ProductController@destroy');
-  Route::get('make_available/{id}','ProductController@make_available');
+  Route::get('make_available/{id}','ProductController@make_available')->name('make_available/{id}');
 });
 
 Route::group([],function(){

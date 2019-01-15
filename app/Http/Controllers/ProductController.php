@@ -6,6 +6,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendNewsletter;
 use App\Mail\BuyerRequest;
+use App\Mail\SellProduct;
 use App\Product;
 use App\BuyProduct;
 use App\Newsletter;
@@ -57,6 +58,14 @@ class ProductController extends Controller
   public function sell_product($id,$productName){
     $product = Product::where('product_name',$productName)->first();
     Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
+    $customer = BuyProduct::where('buyer_id',$id)->first();
+
+    $data = array(
+      'customer_name'=> $customer->customer_name
+    );
+
+    Mail::to($customer->buyer_email)->send(new SellProduct($data));
+
     BuyProduct::where('buyer_id',$id)->delete();
     return back()->with('success',"$product->product_name has been sold");
   }
@@ -91,12 +100,13 @@ class ProductController extends Controller
   }
 
   public function buy_product(Request $request){
-    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_location','product_name']));
+    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_email','buyer_location','product_name']));
     $data = array(
       'owner_name'=>'Ebenezer',
       'buyer'=>$request->buyer_name,
       'product'=>$request->product_name,
       'contact'=>$request->buyer_contact,
+      'email'=>$request->buyer_email,
       'location'=>$request->buyer_location
     );
     Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));

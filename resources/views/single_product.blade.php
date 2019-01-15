@@ -82,6 +82,9 @@
           <input type="tel" class="form-control" name="buyer_contact" placeholder="Enter Your Contact" required>
         </div>
         <div class="form-group">
+          <input type="email" class="form-control" name="buyer_email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="form-group">
           <input type="text" class="form-control" placeholder="Enter Your Location" name="buyer_location" required>
         </div>
         <input type="hidden" name="product_name" value="{{$one_product->product_name}}" required>

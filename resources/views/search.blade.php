@@ -20,7 +20,6 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-dot d-flex justify-content-center">
       <li class="breadcrumb-item"><a href="{{route('/')}}" class="text-dark">HOME</a></li>
-      <li class="breadcrumb-item"><a href="{{route('products')}}" class="text-dark">Products</a></li>
       <li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">Search Result</li>
     </ol>
   </nav>
@@ -28,11 +27,13 @@
 
 <div class="container">
   <h1>Search Results</h1>
-  <form class="form" action="{{route('search_results')}}" method="get">
-    <div class="form-group mb-5">
-    <input type="search" name="product_name" class="form-control form-control-lg mb-3" value="{{$name}}">
-    <button type="submit" class="btn btn-dark btn-lg"><i class="fa fa-search"></i> Search</button>
-  </div>
+  <form class="form mb-5" action="{{route('search_results')}}" method="get">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <button type="submit" class="input-group-text"><i class="fa fa-search"></i> </button>
+      </div>
+      <input type="search" name="product_name" value="{{$name}}" class="form-control form-control-lg" placeholder="Search ..." aria-describedby="inputGroupPrepend" required>
+    </div>
   </form>
 
 
