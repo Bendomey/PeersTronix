@@ -38,9 +38,7 @@ class ProductController extends Controller
         'address'=>"single_product/" . $request->product_name
       );
 
-      foreach ($newsletter as $person) {
-        Mail::to($person)->send(new sendNewsletter($data));
-      }
+        Mail::to($newsletter)->send(new sendNewsletter($data));
 
     } catch (Swift_IoException $e) {
       return back()->with('error',"$request->product_name was not uploaded successfully");

@@ -36,7 +36,7 @@
       <button type="submit" class="btn btn-dark btn-lg">Search</button>
     </form>
     <form class="form" action="#" method="post">
-      <select class="form-control form-control-sm rounded-0" name="sort">
+      <select class="form-control form-control-sm rounded-0" id="sort" name="sort">
         <option value="default">Default Sorting</option>
         <option value="new">Sort By Newness</option>
         <option value="rating">Sort By Rating</option>
@@ -44,6 +44,9 @@
         <option value="high_to_low">Sort By Price: High To Low</option>
       </select>
     </form>
+    <div class="output">
+
+    </div>
     @if(count($all_available_product) == 0)
 
       <div class="alert alert-warning" role="alert">

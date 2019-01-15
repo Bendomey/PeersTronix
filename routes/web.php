@@ -49,9 +49,18 @@ Route::group([],function(){
   Route::get('make_available/{id}','ProductController@make_available');
 });
 
+Route::group([],function(){
+  Route::get('getNewProduct','AjaxController@getNewProduct')->name('getNewProduct');
+  Route::get('sortByProductRating','AjaxController@sortByProductRating')->name('sortByProductRating');
+  Route::get('sortByPriceLowToHigh','AjaxController@sortByPriceLowToHigh')->name('sortByPriceLowToHigh');
+  Route::get('sortByPriceHighToLow','AjaxController@sortByPriceHighToLow')->name('sortByPriceHighToLow');
+
+});
+
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
 Route::get('delete_contact/{id}','ContactUsController@destroy');
 Route::get('accept_booking/{id}','ContactUsController@accept_booking');
+
 
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');
