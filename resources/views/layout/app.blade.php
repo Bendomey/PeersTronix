@@ -183,5 +183,6 @@
     <script src="{{asset('js/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/index.js')}}"></script>
     <script src="{{asset('js/global.js')}}"></script>
+    <script src="{{asset('js/sort.js')}}"></script>
   </body>
 </html>

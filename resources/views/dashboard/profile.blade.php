@@ -29,7 +29,7 @@
                 </div>
                 <div class="member-img">
                   @if(Auth::user()->profile_img != null)
-                    <img src='{{asset(Auth::user()->profile_img)}}' class="rounded-circle w-100" alt="profile-image">
+                    <img src='{{asset(Auth::user()->profile_img)}}' class="rounded-circle w-90" height="100" alt="profile-image">
                   @else
                   <img src='{{asset("images/defaultProfile.png")}}' class="rounded-circle" alt="profile-image">
                   @endif
@@ -172,11 +172,15 @@
                 </button>
             </div>
             <div class="modal-body">
+                @if(Auth::user()->profile_img != null)
                 <img src='{{asset(Auth::user()->profile_img)}}' class="w-50 rounded-circle" height="200" id="img" alt="{{Auth::user()->name}} profile picture">
+                @else
+                <img src='{{asset("images/defaultProfile.png")}}' class="w-50 rounded-circle" height="200" id="img" alt="{{Auth::user()->name}} profile picture">
+                @endif
                 <form action="{{route('update_profile_img')}}" enctype="multipart/form-data" method="post" class="form">
-                    @csrf
+                  @csrf
                     <input type="hidden" value="{{Auth::user()->id}}">
-                    <input type="file" name="profile_img" id="upload" class="form-control my-1" onchange="previewImage(event)">
+                    <input type="file" name="profile_img" id="upload" class="form-control my-1" onchange="previewImage(event)" required>
                     <button class="btn btn-default btn-round waves-effect">Save</button>
                 </form>
             </div>

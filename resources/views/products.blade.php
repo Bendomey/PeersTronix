@@ -49,17 +49,19 @@
       </div>
     </div>
     <div class="col-lg-9">
-      <div class="d-flex justify-content-end mb-5">
+      <!-- <div class="d-flex justify-content-end mb-5"> -->
         <form class="form" action="#" method="post">
-          <select class="custom-select rounded-0" name="sort">
-            <option value="default">Default Sorting</option>
-            <option value="new">Sort By Newness</option>
+          <select class="custom-select rounded-0" id="sort_please"  name="sort">
+            <option value="default" hidden>Sort By</option>
+            <option value="newness">Sort By Newness</option>
             <option value="rating">Sort By Rating</option>
             <option value="low_to_high">Sort By Price: Low To High</option>
             <option value="high_to_low">Sort By Price: High To Low</option>
           </select>
+          <!-- <button type="button" onclick="getMessage()">get</button> -->
         </form>
       </div>
+
       @if(count($all_available_product) == 0)
 
         <div class="alert alert-warning" role="alert">

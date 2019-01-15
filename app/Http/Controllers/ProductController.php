@@ -94,4 +94,11 @@ class ProductController extends Controller
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
   }
 
+  // for ajax
+
+  public function getMessage(){
+    $message = "This is the message";
+    return response()->json(array('msg'=>$message),200);
+  }
+
 }

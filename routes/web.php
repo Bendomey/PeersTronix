@@ -55,6 +55,8 @@ Route::post('save_contact','ContactUsController@createContact')->name('save_cont
 Route::get('delete_contact/{id}','ContactUsController@destroy');
 Route::get('accept_booking/{id}','ContactUsController@accept_booking');
 
+Route::post('/getmsg','ProductController@getMessage');
+
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');
 
