@@ -13,9 +13,6 @@ class ContactUsController extends Controller
 
     public function createContact(Request $req) {
       // save details of  people (contact us)
-
-      Contact::create($req->only(['customer_full_name','customer_email','company_name','customer_phone','message']));
-
       $data = array(
         'manager'=>"Ebenezer",
         'customer'=>$req->customer_full_name,
@@ -24,10 +21,13 @@ class ContactUsController extends Controller
         'phone'=>$req->customer_phone,
         'message'=>$req->message
       );
+        Mail::to('domeybenjamin1@gmail.com')->send(new BookingRequest($data));
 
-      Mail::to('domeybenjamin1@gmail.com')->send(new BookingRequest($data));
+        // return back()->with('modal_error_message','Your account wasn\'t created due to network errors');
 
+      Contact::create($req->only(['customer_full_name','customer_email','company_name','customer_phone','message']));
       return back()->with('success','Your request has been submitted successfully');
+
     }
 
     public function accept_booking($id){

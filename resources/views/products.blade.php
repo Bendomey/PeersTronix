@@ -32,9 +32,9 @@
     <form class="form" action="{{route('search_results')}}" method="get">
       <div class="input-group">
         <div class="input-group-prepend">
-          <button type="submit" class="input-group-text" name="product_name"><i class="fa fa-search"></i> </button>
+          <button type="submit" class="input-group-text"><i class="fa fa-search"></i> </button>
         </div>
-        <input type="search" class="form-control form-control-lg" placeholder="Search ..." aria-describedby="inputGroupPrepend" required>
+        <input type="search" name="product_name" class="form-control form-control-lg" placeholder="Search ..." aria-describedby="inputGroupPrepend" required>
       </div>
     </form>
   </div>

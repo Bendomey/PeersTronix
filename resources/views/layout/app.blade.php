@@ -17,6 +17,15 @@
   </head>
   <body>
 
+
+    @if(Session::has('modal_error_message'))
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('#errorModal').modal('show');
+        })
+      </script>
+    @endif
+
     <!-- application starts -->
     <header>
 <!--Navbar-->
@@ -51,8 +60,14 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 font-weight-bold">PeersTronix</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+          <p>
+            Please submit your email for updates on new products available
+          </p>
+          <form class="form" action="{{route('create')}}" method="post">
+            @csrf
+            <input type="email" name="email" class="form-control mr-2" placeholder="email ..." required>
+            <button type="submit" class="btn btn-dark my-3 btn-block"><i class="fa fa-share-square mr-2"></i>Send</button>
+          </form>
         </div>
         <!-- Grid column -->
 
@@ -174,6 +189,28 @@
 
   </footer>
   <!-- Footer -->
+
+
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- scripts -->
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
