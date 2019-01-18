@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="js-parallax u-promo-block" style="background-image: url(images/contactUs.jpg); background-size: 100% 100%">
+<section class="js-parallax u-promo-block" style="background-image: url({{asset('images/contactUs.jpg')}}); background-size: 100% 100%">
   <div class="container text-white u-ver-center u-content-space">
     <div class="row justify-content-center">
       <div class="col-12">
@@ -51,7 +51,6 @@
     </div>
     <div class="col-lg-9">
       <div class="d-flex justify-content-end mb-5">
-        <form class="form" action="#" method="post">
           <select class="custom-select rounded-0" name="sort">
             <option value="default">Default Sorting</option>
             <option value="new">Sort By Newness</option>
@@ -59,7 +58,6 @@
             <option value="low_to_high">Sort By Price: Low To High</option>
             <option value="high_to_low">Sort By Price: High To Low</option>
           </select>
-        </form>
       </div>
       @if(count($all_available_product) == 0)
 

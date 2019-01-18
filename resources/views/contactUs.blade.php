@@ -50,7 +50,7 @@
 <div class="mb-5">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-dot d-flex justify-content-center">
-    <li class="breadcrumb-item"><a href="PeersTronix.html" class="text-dark">HOME</a></li>
+    <li class="breadcrumb-item"><a href="{{route('/')}}" class="text-dark">HOME</a></li>
     <li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">CONTACT US</li>
   </ol>
   </nav>

@@ -3,7 +3,7 @@
 @section('title','Shop')
 
 @section('content')
-<section class="js-parallax u-promo-block" style="background-image: url(images/contactUs.jpg); background-size: 100% 100%">
+<section class="js-parallax u-promo-block" style="background-image: url({{asset('images/contactUs.jpg')}}); background-size: 100% 100%">
   <div class="container text-white u-ver-center u-content-space">
     <div class="row justify-content-center">
       <div class="col-12">
@@ -60,36 +60,18 @@
 
       <h1>{{$one_product->product_name}}</h1>
       <h4>Ghc {{$one_product->product_price}}</h4>
-      <p>{{$one_product->brief_description}}</p>
       <p>
         <!-- <h5>Product Rating</h5> -->
-      @for($i = 0; $i < $one_product->product_rating; $i++)
-        <i class="fa fa-star" style="color: gold"></i>
-      @endfor
-      @for($i = 0; $i < (5 - $one_product->product_rating); $i++)
-        <i class="far fa-star" style="color: gold"></i>
-      @endfor
-    </p>
-      <a href="#" class="btn btn-dark btn-lg btn-block buy"><i class="fa fa-cart-arrow-down"></i> Purchase</a>
+        @for($i = 0; $i < $one_product->product_rating; $i++)
+          <i class="fa fa-star" style="color: gold"></i>
+        @endfor
+        @for($i = 0; $i < (5 - $one_product->product_rating); $i++)
+          <i class="far fa-star" style="color: gold"></i>
+        @endfor
+      </p>
+      <p class="pb-3" style="border-bottom: 1px solid #eee">{{$one_product->brief_description}}</p>
       <p class="my-3"><strong>Category :</strong>{{$one_product->product_category}} </p>
-      <form class="form buyProductForm" action="{{route('buy_product')}}" method="post">
-        @csrf
-        <div class="form-group">
-          <i>Please fill this form</i>
-          <input type="text" name="buyer_name" class="form-control" aria-describedby="emailHelp" placeholder="Enter Your Full Name" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" class="form-control" name="buyer_contact" placeholder="Enter Your Contact" required>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" name="buyer_email" placeholder="Enter Your Email" required>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter Your Location" name="buyer_location" required>
-        </div>
-        <input type="hidden" name="product_name" value="{{$one_product->product_name}}" required>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <a href='{{url("cart/$one_product->product_id")}}' class="btn btn-dark btn-lg rounded-0 p-3"><i class="fa fa-cart-arrow-down mr-1"></i>ADD TO CART</a>
     </div>
   </div>
   <!-- description and reviews -->

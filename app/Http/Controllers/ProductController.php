@@ -101,17 +101,22 @@ class ProductController extends Controller
   }
 
   public function buy_product(Request $request){
-    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_email','buyer_location','product_name']));
+    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_email','buyer_location','product_name','buyer_city']));
     $data = array(
       'owner_name'=>'Ebenezer',
       'buyer'=>$request->buyer_name,
       'product'=>$request->product_name,
       'contact'=>$request->buyer_contact,
       'email'=>$request->buyer_email,
-      'location'=>$request->buyer_location
+      'location'=>$request->buyer_location,
     );
     Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
+  }
+
+  public function add_to_cart($id){
+    Product::where('product_id',$id)->update(['cart'=>'1']);
+    return back()->with('success','Product has been added to cart successfully');
   }
 
 

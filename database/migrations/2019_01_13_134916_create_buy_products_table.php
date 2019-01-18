@@ -19,6 +19,7 @@ class CreateBuyProductsTable extends Migration
             $table->string('buyer_contact');
             $table->string('buyer_email');
             $table->string('buyer_location');
+            $table->string('buyer_city');
             $table->string('product_name');
             $table->timestamps();
         });

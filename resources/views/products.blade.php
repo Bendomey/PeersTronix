@@ -49,54 +49,56 @@
       </div>
     </div>
     <div class="col-lg-9">
-      <!-- <div class="d-flex justify-content-end mb-5"> -->
-        <form class="form" action="#" method="post">
-          <select class="custom-select rounded-0" id="sort_please"  name="sort">
+        <div class="d-flex justify-content-end mb-5">
+          <select class="custom-select rounded-0 mb-5" id="sort_please"  name="sort">
             <option value="default" hidden>Sort By</option>
             <option value="newness">Sort By Newness</option>
             <option value="rating">Sort By Rating</option>
             <option value="low_to_high">Sort By Price: Low To High</option>
             <option value="high_to_low">Sort By Price: High To Low</option>
           </select>
-          <!-- <button type="button" onclick="getMessage()">get</button> -->
-        </form>
-      </div>
-
-      @if(count($all_available_product) == 0)
-
-        <div class="alert alert-warning" role="alert">
-          <strong>Sorry!</strong> No Product For Sale :(
         </div>
 
-      @endif
+        <!-- products -->
+        @if(count($all_available_product) == 0)
 
-      <div class="row">
-        @if(count($all_available_product) > 0)
-          @foreach($all_available_product as $product)
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href='{{url("single_product/$product->product_name")}}' class="text-decoration-none">
-              <div class="card shadow mb-5">
-                <img src='{{asset("$product->thumb_picture")}}' height="200" class="card-img-top w-100" alt="">
-                <div class="card-body">
-                  <h4 class="card-title text-center">{{$product->product_name}}</h4>
-                  <p class="d-flex justify-content-center">
-                    @for($i = 0; $i < $product->product_rating; $i++)
-                      <i class="fa fa-star"></i>
-                    @endfor
-                    @for($i = 0; $i < (5 - $product->product_rating); $i++)
-                      <i class="far fa-star"></i>
-                    @endfor
-                  </p>
-                  <p class="card-text text-center">Ghc {{$product->product_price}}</p>
-                </div>
-              </div>
-            </a>
+          <div class="alert alert-warning" role="alert">
+            <strong>Sorry!</strong> No Product For Sale :(
           </div>
-          @endforeach
+
         @endif
-      </div>
-      <div class="d-flex justify-content-center">
-        {{$all_available_product->links()}}
+
+        <div class="row">
+          @if(count($all_available_product) > 0)
+            @foreach($all_available_product as $product)
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <a href='{{url("single_product/$product->product_name")}}' class="text-decoration-none">
+                <div class="card shadow mb-5">
+                  <img src='{{asset("$product->thumb_picture")}}' height="200" class="card-img-top w-100" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">{{$product->product_name}}</h4>
+                    <p class="d-flex justify-content-center">
+                      @for($i = 0; $i < $product->product_rating; $i++)
+                        <i class="fa fa-star"></i>
+                      @endfor
+                      @for($i = 0; $i < (5 - $product->product_rating); $i++)
+                        <i class="far fa-star"></i>
+                      @endfor
+                    </p>
+                    <p class="card-text text-center">Ghc {{$product->product_price}}</p>
+                    <div class="d-flex justify-content-center">
+                      <a href='{{url("cart/$product->product_id")}}' class="btn btn-dark"><i class="fa fa-cart-arrow-down addToCart"></i> ADD TO CART</a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            @endforeach
+          @endif
+          <div class="d-flex justify-content-center">
+            {{$all_available_product->links()}}
+          </div>
+        </div>
       </div>
     </div>
 </div>

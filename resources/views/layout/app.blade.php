@@ -39,8 +39,11 @@
             <li class="nav-item"> <a class="nav-link" href="{{route('services')}}"><i class="fas fa-cube mr-1"></i>Services</a> </li>
 					  <li class="nav-item"> <a class="nav-link" href="{{route('products')}}"><i class="fas fa-cube mr-1"></i>Shop</a> </li>
 						<li class="nav-item"> <a class="nav-link " href="{{route('about_us')}}"><i class="fas fa-user-alt mr-1"></i>About Us <span class="sr-only">(current)</span></a> </li>
-					  <li class="nav-item"> <a class="nav-link" href="{{route('contact_us')}}"><i class="fas fa-phone mr-1"></i>Contact Us</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{{route('contact_us')}}"><i class="fas fa-phone mr-1"></i>Contact Us</a> </li>
 					</ul>
+          <div class="">
+            <a href="{{route('cart')}}" class="btn btn-outline-light"><i class="fa fa-cart-arrow-down mr-1"></i>Cart<span class="badge badge-light ml-1" id="cartBadge"></span></a>
+          </div>
 				 </div>
 			  </div>
 		  </nav>

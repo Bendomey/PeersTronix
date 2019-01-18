@@ -77,5 +77,30 @@ $(document).ready(function() {
 
   });
 
+  $.ajax({
+    type: 'GET',
+    url: '/count_cart_product',
+    dataType: 'JSON',
+    success: (data) => {
+      $('#cartBadge').html(data);
+    },
+    error: ()=>{
+      alert('error');
+    }
+  });
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '/disableButton',
+  //   dataType: 'JSON',
+  //   data:
+  //   success: (data)=>{
+  //
+  //   },
+  //   error: ()=>{
+  //     alert('error');
+  //   }
+  // })
+
 
 });

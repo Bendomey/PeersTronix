@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('additional_info')->nullable();
             $table->enum('feature',['0','1'])->default('0');
+            $table->enum('cart',['0','1'])->default('0');
             $table->string('thumb_picture');
             $table->string('image_one');
             $table->string('image_two');
