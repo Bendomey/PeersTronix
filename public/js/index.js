@@ -82,12 +82,28 @@ $(document).ready(function() {
     url: '/count_cart_product',
     dataType: 'JSON',
     success: (data) => {
-      $('#cartBadge').html(data);
+      $('#cartBadge').html(data)
+      let output = null;
+      if(data > 0){
+        output = 'active'
+      }else
+      if(data == 0){
+        output = 'disable'
+      }
+      $('#cartView').text(output)
+      $('.checkoutBtnCart').append(output)
     },
     error: ()=>{
       alert('error');
     }
   });
+
+  if($('#cartView').val() == 'active'){
+    $('.checkoutBtnCart').removeClass('disabled');
+  }else
+  if ($('#cartView').val() == 'disable') {
+    $('.checkoutBtnCart').addClass('disabled');
+  }
 
   // $.ajax({
   //   type: 'GET',

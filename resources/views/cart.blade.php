@@ -30,44 +30,72 @@
 
 <div class="container mb-5">
 
-@if(count($cart_products) > 0)
-  @foreach($cart_products as $cart_product)
-  <div class="row mb-5 py-lg-3 py-sm-3 roomBorder">
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <img src='{{asset("$cart_product->thumb_picture")}}' height="350" class="w-100" alt="">
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 ">
-      <div class="container my-lg-5 my-md-4 my-sm-3">
-        <h3 class="text-uppercase font-weight-bold" style="font-family: 'Old Standard TT',serif;">{{$cart_product->product_name}}</h3>
-        <h4 class=" font-weight-bold" style="font-family: 'Old Standard TT',serif;">{{$cart_product->product_price}}</h4>
-        <div class="star d-inline-block mb-3">
-          @for($i = 0; $i < $cart_product->product_rating; $i++)
-            <i class="fa fa-star"></i>
-          @endfor
-          @for($i = 0; $i < (5 - $cart_product->product_rating); $i++)
-            <i class="far fa-star"></i>
-          @endfor
+  <div class="row">
+    <div class="col-lg-9 col-md-8 col-sm-12 mb-5">
+      @if(count($cart_products) > 0)
+        @foreach($cart_products as $cart_product)
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="col">Product Name</th>
+                <th class="col">Product Image</th>
+                <th class="col">Product Price</th>
+                <th class="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td ><h5 class="text-uppercase font-weight-bold" style="font-family: 'Old Standard TT',serif;">{{$cart_product->product_name}}</h5></td>
+                <td><img src='{{asset("$cart_product->thumb_picture")}}'  class="w-100" height="50" alt=""> </td>
+                <td>Ghc {{$cart_product->product_price}}</td>
+                <td class="col text-center"><a href='{{url("remove_product_from_cart/$cart_product->product_id")}}'> <i class="fa fa-times"></i> </a></td>
+              </tr>
+            </tbody>
+          </table>
+        @endforeach
+      @else
+        <div class="alert alert-info show" role="alert">
+          <strong>Alert!</strong> No Product Available In Your Cart. <a href="{{route('products')}}">Click Here</a> to add products
         </div>
-        <p><a href='{{url("remove_product_from_cart/$cart_product->product_id")}}' class="btn btn-lg btn-outline-primary px-5 py-3 rounded-0">REMOVE</a></p>
+
+      @endif
+        <div class="d-flex justify-content-end">
+          {{$cart_products->links()}}
+        </div>
+      <div class=" d-flex justify-content-end flex-direction-row py-2" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee">
+        <span class="mr-5"><span style="font-size: 15px; color: #8e8e8e" class="mr-3">Total</span><span style="font-size: 25px;">Ghc {{$totalPrice}}</span></span>
+        <input type="hidden" id="cartView">
+        <a href="{{route('checkout')}}" class="btn btn-dark rounded-0 p-3 checkoutBtnCart">CHECKOUT</a>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-12">
+      <div class="card shadow mb-5 py-lg-3 py-md-3">
+        <div class="card-body">
+          <h3 class="text-center">Categories</h3>
+          <ul>
+            <li><a href="{{'products'}}">All Types</a></li>
+            <li><a href="{{'laptop'}}">Laptops</a></li>
+            <li><a href="{{'phone'}}">Phones</a></li>
+            <li><a href="{{'computer_part'}}">Computer Part</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card shadow py-lg-3 py-md-3">
+        <div class="card-body">
+          <h3 class="text-center">Services</h3>
+          <ul>
+            <li>Laptop Repair</li>
+            <li>Network Support</li>
+            <li>Virus Removal</li>
+            <li>Data Recovery</li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <a href="{{route('services')}}" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  @endforeach
-  @else
-
-  <div class="alert alert-info show" role="alert">
-    <strong>Alert!</strong> No Product Available In Your Cart. <a href="{{route('products')}}">Click Here</a> to add products
-  </div>
-
-@endif
-  <div class="d-flex justify-content-end">
-    {{$cart_products->links()}}
-  </div>
-  <div class="d-flex justify-content-end flex-direction-row pt-5" style="border-top: 1px solid #eee">
-    <span class="mr-5"><span style="font-size: 20px; color: #8e8e8e" class="mr-3">Total</span><span style="font-size: 30px;">Ghc {{$totalPrice}}</span></span>
-    <a href="{{route('checkout')}}" class="btn btn-dark btn-lg p-3 ">CHECKOUT</a>
-  </div>
-
 </div>
 
 
