@@ -18,13 +18,48 @@
   <body>
 
 
-    @if(Session::has('modal_error_message'))
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $('#errorModal').modal('show');
-        })
-      </script>
+    @if(Session::has('success'))
+    <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <i class="fa fa-2x fa-correct text-success mr-2"></i><strong>Congratulations!</strong> {{Session::get('success')}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     @endif
+
+    @if(Session::has('error'))
+    <div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">An Error Occured</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <i class="fa fa-2x fa-times text-danger mr-2"></i><strong>Sorry!</strong> {{Session::get('error')}}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
+
 
     <!-- application starts -->
     <header>
@@ -191,31 +226,9 @@
     <!-- Footer Links -->
 
   </footer>
+  <button type="button" class="hello">hello</button>
   <!-- Footer -->
 
-
-
-<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- scripts -->
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -224,5 +237,11 @@
     <script src="{{asset('js/index.js')}}"></script>
     <script src="{{asset('js/global.js')}}"></script>
     <script src="{{asset('js/sort.js')}}"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#success').modal('show');
+        $('#error').modal('show');
+      })
+    </script>
   </body>
 </html>

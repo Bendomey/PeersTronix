@@ -41,9 +41,8 @@ class ProductController extends Controller
       if(count($newsletter) > 0){
         Mail::to($newsletter)->send(new sendNewsletter($data));
       }
-
-    } catch (Swift_IoException $e) {
-      return back()->with('error',"$request->product_name was not uploaded due to network connectivity problem");
+    } catch (Exception $e) {
+      return back()->with('error',"$request->product_name was not uploaded due to poor network connectivity problem");
     }
 
     $product->save();
@@ -58,15 +57,17 @@ class ProductController extends Controller
 
   public function sell_product($id,$productName){
     $product = Product::where('product_name',$productName)->first();
-    Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
     $customer = BuyProduct::where('buyer_id',$id)->first();
 
-    $data = array(
-      'customer_name'=> $customer->customer_name
-    );
-
-    Mail::to($customer->buyer_email)->send(new SellProduct($data));
-
+    try {
+      $data = array(
+        'customer_name'=> $customer->customer_name
+      );
+      Mail::to($customer->buyer_email)->send(new SellProduct($data));
+    } catch (\Exception $e) {
+      return back()->with('error',"Request was unable to complete due to poor network connectivity");
+    }
+    Product::where('product_name',$productName)->update(['product_availability'=>'sold']);
     BuyProduct::where('buyer_id',$id)->delete();
     return back()->with('success',"$product->product_name has been sold");
   }
@@ -101,16 +102,20 @@ class ProductController extends Controller
   }
 
   public function buy_product(Request $request){
+    try {
+      $data = array(
+        'owner_name'=>'Ebenezer',
+        'buyer'=>$request->buyer_name,
+        'product'=>$request->product_name,
+        'contact'=>$request->buyer_contact,
+        'email'=>$request->buyer_email,
+        'location'=>$request->buyer_location,
+      );
+      Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
+    } catch (\Exception $e) {
+      return back()->with('error',"Your request to purchase this product was unsuccessful due to network connectivity");
+    }
     $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_email','buyer_location','product_name','buyer_city']));
-    $data = array(
-      'owner_name'=>'Ebenezer',
-      'buyer'=>$request->buyer_name,
-      'product'=>$request->product_name,
-      'contact'=>$request->buyer_contact,
-      'email'=>$request->buyer_email,
-      'location'=>$request->buyer_location,
-    );
-    Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
   }
 

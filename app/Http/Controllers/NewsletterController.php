@@ -11,7 +11,7 @@ class NewsletterController extends Controller
 
     public function create(Request $request){
       Newsletter::create($request->only(['email']));
-      return back();
+      return back()->with('success','You subscribed successfully');
     }
 
 

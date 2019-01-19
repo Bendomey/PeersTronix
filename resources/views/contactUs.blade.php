@@ -3,36 +3,6 @@
 @section('title','Contact Us')
 
 @section('content')
-
-
-     @if(Session::has('modal_success_message'))
-       <script type="text/javascript">
-         $(document).ready(function(){
-           $('#successModal').modal();
-         })
-       </script>
-     @endif
-     <!-- Modal -->
-     <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
-           <div class="modal-body">
-             {{Session::get('modal_success_message')}}
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary">Save changes</button>
-           </div>
-         </div>
-       </div>
-     </div>
-
     <section class="js-parallax u-promo-block" style="background-image: url(images/contactUs.jpg); background-size: 100% 100%">
       <div class="container text-white u-ver-center u-content-space">
         <div class="row justify-content-center">
@@ -60,18 +30,6 @@
   <div class="row mb-5">
     <div class="col-lg-9 col-md-12 col-sm-12  justify-content-center one">
     <div class="container">
-
-      @if(Session::has('success'))
-
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Congratulations!</strong> {!! Session::get('success') !!}.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-      @endif
-
       <form action="{{route('save_contact')}}" class="form" method="POST">
         @csrf
         <div class="row mb-lg-3 mb-md-3 mb-sm-3">
