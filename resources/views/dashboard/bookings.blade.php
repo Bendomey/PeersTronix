@@ -100,11 +100,15 @@
       </div>
       <div class="modal-body">
         <p>Are you sure you want to delete this request?</p>
+        <form class="#" action="{{url('delete_contact')}}" method="post">
+          @csrf
+          <input type="hidden" id="deleteInput" value="" name="id">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a class="btn btn-danger deleteBtn">Okay</a>
+        <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+        <button type="sumbit" class="btn btn-danger deleteBtn">Okay</a>
       </div>
+    </form>
     </div>
   </div>
 </div>

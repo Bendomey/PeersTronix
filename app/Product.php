@@ -26,4 +26,7 @@ class Product extends Model
 
     protected $hidden = ['product_id','created_at','updated_at'];
 
+    public function buyProduct(){
+      return $this->belongsTo('App\BuyProduct');
+    }
 }

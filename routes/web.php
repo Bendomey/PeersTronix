@@ -54,7 +54,7 @@ Route::group([],function(){
   Route::post('dashboard/update_product','ProductController@update_product')->name('update_product');
   Route::get('dashboard/buyer_info','DashboardController@buyer_info_view')->name('dashboard/buyer_info');
   Route::get('delete_buyer_request/{id}','DashboardController@delete_buyer_request');
-  Route::get('delete_product/{id}','ProductController@destroy');
+  Route::post('delete_product','ProductController@destroy')->name('delete_product');
   Route::get('make_available/{id}','ProductController@make_available')->name('make_available/{id}');
 });
 
@@ -67,7 +67,7 @@ Route::group([],function(){
 });
 
 Route::post('save_contact','ContactUsController@createContact')->name('save_contact');
-Route::get('delete_contact/{id}','ContactUsController@destroy');
+Route::post('delete_contact','ContactUsController@destroy');
 Route::get('accept_booking/{id}','ContactUsController@accept_booking');
 
 

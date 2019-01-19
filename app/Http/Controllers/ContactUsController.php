@@ -50,9 +50,9 @@ class ContactUsController extends Controller
       return back()->with('success',"Your request has been accepted");
     }
 
-    public function destroy($id){
-      $contact = Contact::where('customer_id',$id)->delete();
-      return back()->with('success','Request Declined successfully');
+    public function destroy(Request $request){
+      $contact = Contact::where('customer_id',$request->id)->delete();
+      return back()->with('success','Customer\'s request Declined');
     }
 
 }

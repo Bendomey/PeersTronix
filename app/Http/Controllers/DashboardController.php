@@ -58,7 +58,9 @@ class DashboardController extends Controller
 
     public function buyer_info_view(){
       $all_info = BuyProduct::orderBy('created_at','desc')->paginate(15);
-      return view('dashboard/buyer_info',compact('all_info'));
+      $customers = BuyProduct::where('buyer_id','1')->first();
+      // $productNames =unserialize($customers);
+      return view('dashboard/buyer_info',compact('all_info'));//->with('productName',$productNames);
     }
 
     public function delete_buyer_request($id){

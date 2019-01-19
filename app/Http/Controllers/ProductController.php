@@ -90,14 +90,14 @@ class ProductController extends Controller
       return $image_save;
   }
 
-  public function destroy($id){
-    $product = Product::where('product_id',$id)->first();
+  public function destroy(Request $request){
+    $product = Product::where('product_id',$request->id)->first();
     unlink($product->thumb_picture);
     unlink($product->image_one);
     unlink($product->image_two);
     unlink($product->image_three);
     unlink($product->image_four);
-    Product::where('product_id',$id)->delete();
+    Product::where('product_id',$request->id)->delete();
     return back()->with('success','Your product was deleted successfully');
   }
 
@@ -115,7 +115,20 @@ class ProductController extends Controller
     } catch (\Exception $e) {
       return back()->with('error',"Your request to purchase this product was unsuccessful due to network connectivity");
     }
-    $product = BuyProduct::create($request->only(['buyer_name','buyer_contact','buyer_email','buyer_location','product_name','buyer_city']));
+    $products = Product::where('cart',1)->get();
+    $customer = new BuyProduct();
+    $customer->buyer_name = $request->buyer_name;
+    $customer->buyer_contact = $request->buyer_contact;
+    $customer->buyer_email = $request->buyer_email;
+    $customer->buyer_location = $request->buyer_location;
+    $customer->buyer_city = $request->buyer_city;
+    $data = [];
+    foreach ($products as $product) {
+      $data = $product->product_name;
+    }
+
+    $customer->product_name = serialize($data);
+    $customer->save();
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
   }
 

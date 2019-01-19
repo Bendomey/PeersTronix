@@ -62,7 +62,7 @@
                                       <td>
                                         <button class="btn btn-info view_product" data-product="{{$product}}"><i class="fa fa-eye"></i> View</button>
                                         <a href='{{url("dashboard/edit_product/$product->product_id")}}'><button class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Edit</button></a>
-                                        <a href='{{url("delete_product/$product->product_id")}}'><button class="btn btn-danger"><i class="fa fa-trash mr-1"></i></button></a>
+                                        <button class="btn btn-danger" data-id="{{$product->product_id}}" id="confirmDeleteProduct"><i class="fa fa-trash mr-1"></i></button>
                                       </td>
                                     </tr>
                                     @endforeach
@@ -185,6 +185,31 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="modal fade" id="confirmDeleteProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this request?</p>
+        <form class="#" action="{{route('delete_product')}}" method="post">
+          @csrf
+          <input type="hidden" id="deleteInputProduct" value="" name="id">
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-secondary" data-dismiss="modal">Close</a>
+        <button type="sumbit" class="btn btn-danger deleteBtn">Okay</a>
+      </div>
+    </form>
+    </div>
+  </div>
 </div>
 
 @stop

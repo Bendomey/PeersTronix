@@ -55,9 +55,15 @@ $(document).ready(function(){
       $('#viewProduct').modal('show');
     });
 
+    $('#confirmDeleteProduct').click(function(){
+      let id = $(this).data('id');
+      $('#deleteInputProduct').val(id);
+      $('#confirmDeleteProductModal').modal('show');
+    });
+
     $('#confirmDeleteBooking').click(function(){
       let id = $(this).data('id');
-      $('.deleteBtn').attr('href',`${id}`)
+      $('#deleteInput').val(id);
       $('#confirmDeleteBookingModal').modal('show')
     })
 

@@ -11,5 +11,7 @@ class BuyProduct extends Model
 
     protected $guarded = ['buyer_id','created_us','updated_at'];
 
-
+    public function products(){
+      return $this->hasMany('App\Product');
+    }
 }

@@ -56,7 +56,7 @@
               <input type="text" name="buyer_city" class="form-control form-control-lg p-3 rounded-0" style="font-size: 15px" placeholder="CITY" required>
             </div>
             <div class="col">
-              <input type="text" name="address" class="form-control form-control-lg p-3 rounded-0" style="font-size: 15px" placeholder="ADDRESS" required>
+              <input type="text" name="buyer_location" class="form-control form-control-lg p-3 rounded-0" style="font-size: 15px" placeholder="ADDRESS" required>
             </div>
           </div>
         </div>
