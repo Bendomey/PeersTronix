@@ -54,4 +54,11 @@ $(document).ready(function(){
       $('#image_four').attr('src',`${data.image_four}`);
       $('#viewProduct').modal('show');
     });
+
+    $('#confirmDeleteBooking').click(function(){
+      let id = $(this).data('id');
+      $('.deleteBtn').attr('href',`${id}`)
+      $('#confirmDeleteBookingModal').modal('show')
+    })
+
 });

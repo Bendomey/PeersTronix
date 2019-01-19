@@ -65,7 +65,7 @@
                                       <td>{{$booking->message}}</td>
                                       <td>
                                         <a href='{{url("accept_booking/$booking->customer_id")}}'><button class="btn btn-success"><i class="fa fa-check"></i></button></a>
-                                        <a href='{{url("delete_contact/$booking->customer_id")}}'><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                                        <button class="btn btn-danger" data-id="{{$booking->customer_id}}" id="confirmDeleteBooking"><i class="fa fa-trash"></i></button>
                                       </td>
                                     </tr>
                                   @endforeach
@@ -88,5 +88,25 @@
     </div>
   </div>
 </section>
+
+<div class="modal fade" id="confirmDeleteBookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this request?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="btn btn-danger deleteBtn">Okay</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 @stop

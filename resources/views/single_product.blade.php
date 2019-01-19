@@ -47,16 +47,6 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
-      @if(Session::has('success'))
-
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Congratulations!</strong> {!! Session::get('success') !!}.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-      @endif
 
       <h1>{{$one_product->product_name}}</h1>
       <h4>Ghc {{$one_product->product_price}}</h4>
