@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('position');
             $table->string('contact')->nullable();
             $table->string('profile_img')->nullable();
+            $table->enum('isAdmin',['admin','user'])->default('admin');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
