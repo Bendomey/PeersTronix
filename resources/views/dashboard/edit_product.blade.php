@@ -57,7 +57,7 @@
                     <div class="row clearfix">
                         <div class="col-md-6">
                           <select class="form-control show-tick" name="category" required>
-                            <option value="" selected hidden>{{$product_to_be_edited->product_category}}</option>
+                            <option value="{{$product_to_be_edited->product_category}}" selected hidden>{{$product_to_be_edited->product_category}}</option>
                             <option value="default">Category</option>
                             <option value="laptop">Laptop</option>
                             <option value="phone">Phone</option>
@@ -78,7 +78,7 @@
                       </div>
                       <div class="col-md-6">
                           <select class="form-control show-tick" name="rating" required value="{{$product_to_be_edited->product_rating}}">
-                            <option value="" selected hidden>{{$product_to_be_edited->product_rating}}</option>
+                            <option value="{{$product_to_be_edited->product_rating}}" selected hidden>{{$product_to_be_edited->product_rating}}</option>
                             <option value="default">Rating</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

@@ -36,16 +36,7 @@
                 </div>
                 <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#defaultModal">Change</button>
 
-                <div class="body">
-                    <div class="col-12">
-                        <ul class="social-links list-unstyled">
-                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                            <li><a title="instagram" href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                        </ul>
-                    </div>
-
-                </div>
+              
             </div>
             <div class="card">
                 <ul class="nav nav-tabs">

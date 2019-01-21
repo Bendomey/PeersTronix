@@ -1,6 +1,4 @@
 - fix the collapse in the serices Page
-- font for the single_porduct name
 - repair showing the images in the modal view_products view
 - work on the edit_product
 - post ajax in products view
-- disable button when click on cart
