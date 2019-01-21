@@ -16,7 +16,7 @@ class BuyProduct extends Model
       return $this->hasMany('App\Product');
     }
 
-    public function getCreatedAt(){
-      // return Carbon::now()
+    public function getCreatedAtAttribute($value){
+      return Carbon::now()->addSecond()->diffForHumans($value);
     }
 }

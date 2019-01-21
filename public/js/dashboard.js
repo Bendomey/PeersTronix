@@ -72,17 +72,20 @@ $(document).ready(function(){
       url: '/requested_product',
       dataType: 'JSON',
       success: (data) =>{
-        for (var i = 0; i < data.length; i++) {
-          $('#buyernotification').append(`
-            <li>
-              <a href="{{route('dashboard/view_products')}}">
-                <div class="menu-info">
-                    <h4>${data[i]['buyer_name']} wants to buy ${data[i]['product_name']}</h4>
-                    <p><i class="zmdi zmdi-time"></i> ${data[i]['created_at']} </p>
-                </div>
-              </a>
-            </li>
-            `);
+        if (data.length > 0) {
+          for (var i = 0; i < data.length; i++) {
+            $('#buyernotification').append(`
+              <li>
+                <a href="{{route('dashboard/view_products')}}">
+                  <div class="menu-info">
+                      <h4>${data[i]['buyer_name']} wants to buy ${data[i]['product_name']}</h4>
+                      <p><i class="zmdi zmdi-time"></i> ${data[i]['created_at']} </p>
+                  </div>
+                </a>
+              </li>
+              `)}; 
+        }else{
+            $('#buyernotification').append('No Notification');
         }
       },
       error: ()=>{

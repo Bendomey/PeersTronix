@@ -59,18 +59,7 @@
                         <li class="header">NOTIFICATIONS</li>
                         <li class="body">
                             <ul class="menu list-unstyled">
-                              <span id="buyernotification">
-                                
-                              </span>
-                                <li>
-                                  <a href="{{route('dashboard/bookings')}}">
-                                    <div class="icon-circle bg-warning"><i class="zmdi zmdi-account"></i></div>
-                                    <div class="menu-info">
-                                        <h4>Kofi requests your expertise</h4>
-                                        <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
-                                    </div>
-                                  </a>
-                                </li>
+                              <span id="buyernotification"></span>
                             </ul>
                         </li>
                     </ul>

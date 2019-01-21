@@ -113,20 +113,20 @@ class ProductController extends Controller
   }
 
   public function buy_product(Request $request){
-    // try {
-    //   $data = array(
-    //     'owner_name'=>'Ebenezer',
-    //     'buyer'=>$request->buyer_name,
-    //     'product'=>$request->product_name,
-    //     'contact'=>$request->buyer_contact,
-    //     'email'=>$request->buyer_email,
-    //     'city'=>$buyer->buyer_city,
-    //     'location'=>$request->buyer_location,
-    //   );
-    //   Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
-    // } catch (\Exception $e) {
-    //   return back()->with('error',"Your request to purchase this product was unsuccessful due to network connectivity");
-    // }
+    try {
+      $data = array(
+        'owner_name'=>'Ebenezer',
+        'buyer'=>$request->buyer_name,
+        'product'=>$request->product_name,
+        'contact'=>$request->buyer_contact,
+        'email'=>$request->buyer_email,
+        'city'=>$buyer->buyer_city,
+        'location'=>$request->buyer_location,
+      );
+      Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
+    } catch (\Exception $e) {
+      return back()->with('error',"Your request to purchase this product was unsuccessful due to network connectivity");
+    }
     $customer = new BuyProduct();
     $customer->buyer_name = $request->buyer_name;
     $customer->buyer_contact = $request->buyer_contact;
