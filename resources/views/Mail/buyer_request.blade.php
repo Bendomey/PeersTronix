@@ -6,5 +6,7 @@
   <br>
   <b>Email :</b> {{$data['email']}}
   <br>
+  <b>City :</b> {{$data['city']}}
+  <br>
   <b>Location :</b> {{$data['location']}}
 </p>

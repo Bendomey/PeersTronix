@@ -78,7 +78,18 @@ class ProductController extends Controller
   }
 
   public function update_product(Request $request){
-    Product::where('product_id',$request->product_id)->update(['product_name'=>$request->product_name,'product_price'=>$request->price,'product_category'=>$request->category,'product_brand'=>$request->brand,'product_color'=>$request->color,'product_rating'=>$request->rating,'brief_description'=>$request->brief_description,'description'=>$request->description,'additional_info'=>$request->additional_info]);
+    Product::where('product_id',$request->product_id)
+    ->update([
+      'product_name'=>$request->product_name,
+      'product_price'=>$request->price,
+      'product_category'=>$request->category,
+      'product_brand'=>$request->brand,
+      'product_color'=>$request->color,
+      'product_rating'=>$request->rating,
+      'brief_description'=>$request->brief_description,
+      'description'=>$request->description,
+      'additional_info'=>$request->additional_info
+    ]);
     return back()->with('success',"The product was updated successfully");
   }
 
@@ -109,38 +120,22 @@ class ProductController extends Controller
         'product'=>$request->product_name,
         'contact'=>$request->buyer_contact,
         'email'=>$request->buyer_email,
+        'city'=>$buyer->buyer_city,
         'location'=>$request->buyer_location,
       );
       Mail::to('domeybenjamin1@gmail.com')->send(new BuyerRequest($data));
     } catch (\Exception $e) {
       return back()->with('error',"Your request to purchase this product was unsuccessful due to network connectivity");
     }
-    $products = Product::where('cart',1)->get();
     $customer = new BuyProduct();
     $customer->buyer_name = $request->buyer_name;
     $customer->buyer_contact = $request->buyer_contact;
     $customer->buyer_email = $request->buyer_email;
     $customer->buyer_location = $request->buyer_location;
     $customer->buyer_city = $request->buyer_city;
-    $data = [];
-    foreach ($products as $product) {
-      $data = $product->product_name;
-    }
-
-    $customer->product_name = serialize($data);
+    $customer->product_name = $request->product_name;
     $customer->save();
     return back()->with('success',"Your request to purchase this product was successfully sent, we will be in touch");
-  }
-
-  public function add_to_cart($id){
-    Product::where('product_id',$id)->update(['cart'=>'1']);
-    return back()->with('success','Product has been added to cart successfully');
-  }
-
-
-  public function outputInApp(){
-    $data =  Product::all('product_name');
-    return response()->json($data);
   }
 
 }

@@ -23,8 +23,7 @@ Route::group([],function(){
   Route::get('contact_us','ViewController@contactUs')->name('contact_us');
   Route::get('services','ViewController@services')->name('services');
   Route::get('products','ViewController@products')->name('products');
-  Route::get('cart','ViewController@cart')->name('cart');
-  Route::get('checkout','ViewController@checkout')->name('checkout');
+  Route::get('checkout/{id}','ViewController@checkout');
   Route::get('products/laptops','ViewController@laptop_product')->name('laptop');
   Route::get('products/phones','ViewController@phone_product')->name('phone');
   Route::get('products/computer_parts','ViewController@computer_part_product')->name('computer_part');
@@ -32,10 +31,6 @@ Route::group([],function(){
   Route::post('buy_product','ProductController@buy_product')->name('buy_product');
   Route::get('search_results','ProductController@search_product')->name('search_results');
   Route::post('newsletter/phase_1','NewsletterController@create')->name('create');
-  Route::get('cart/{id}','ProductController@add_to_cart');
-  Route::get('count_cart_product','ViewController@count_cart_product')->name('count_cart_product');
-  Route::get('remove_product_from_cart/{id}','ViewController@remove_product_from_cart');
-  Route::get('disableButton/{id}','ViewController@disableButton');
 });
 
 Route::group([],function(){
@@ -73,5 +68,4 @@ Route::get('accept_booking/{id}','ContactUsController@accept_booking');
 
 Auth::routes();
 Route::get('logout','Auth\LoginController@logout')->name('logout');
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -87,7 +87,7 @@
                     </p>
                     <p class="card-text text-center">Ghc {{$product->product_price}}</p>
                     <div class="d-flex justify-content-center">
-                      <a href='{{url("cart/$product->product_id")}}' class="btn btn-dark"><i class="fa fa-cart-arrow-down addToCart"></i> ADD TO CART</a>
+                      <a href='{{url("checkout/$product->product_id")}}' class="btn btn-dark"><i class="fa fa-cart-arrow-down addToCart"></i> BUY</a>
                     </div>
                   </div>
                 </div>

@@ -7,10 +7,6 @@ use App\Product;
 
 class ViewController extends Controller
 {
-  public function __construct(){
-    $this->Middleware('guest');
-  }
-
   public function index() {
     return view('index');
   }
@@ -32,17 +28,8 @@ class ViewController extends Controller
     return view('services');
   }
 
-  public function cart(){
-    $cart_products = Product::where('cart','1')->paginate(9);
-    $total = 0;
-    foreach ($cart_products as $product) {
-      $total = $total + $product->product_price;
-    }
-    return view('cart',compact('cart_products'))->with('totalPrice',$total);
-  }
-
-  public function checkout(){
-    $cart_products = Product::where('cart','1')->paginate(9);
+  public function checkout($id){
+    $cart_products = Product::where('product_id',$id)->first();
     return view('checkout',compact('cart_products'));
   }
 
@@ -71,27 +58,6 @@ class ViewController extends Controller
     $one_product = Product::where('product_name',$id)->first();
     $some_product = Product::where('product_name','!=',$id)->where(['product_availability'=>'available','product_category'=>$one_product->product_category])->take(3)->get();
     return view('single_product',compact(['one_product','some_product']));
-  }
-
-  public function count_cart_product(){
-    $total = Product::where('cart','1')->count();
-    return response()->json($total);
-  }
-
-  public function remove_product_from_cart($id){
-    Product::where('product_id',$id)->update(['cart'=>'0']);
-    return back();
-  }
-
-  public function disableButton($id){
-    $product = Product::where('product_id',$id)->first();
-    $output = NULL;
-    if($product->cart == '1'){
-      $output = "disable";
-    }else{
-      $output = "active";
-    }
-    return response()->json($output);
   }
 
 }

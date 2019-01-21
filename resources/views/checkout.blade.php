@@ -23,7 +23,7 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-dot d-flex justify-content-center">
       <li class="breadcrumb-item"><a href="{{route('/')}}" class="text-dark">HOME</a></li>
-      <li class="breadcrumb-item"><a href="{{route('cart')}}" class="text-dark">CART</a></li>
+      <li class="breadcrumb-item"><a href="{{route('products')}}" class="text-dark">PRODUCT</a></li>
       <li class="breadcrumb-item active" style="font-weight: 700; color: #800080" aria-current="page">CHECKOUT</li>
     </ol>
   </nav>
@@ -60,11 +60,9 @@
             </div>
           </div>
         </div>
+        <input type="hidden" name="product_name" value="{{$cart_products->product_name}}">
 
         <h3 class="font-weight-bold mt-5" style="font-family: 'calibri'">YOUR ORDER</h3>
-
-        @if(count($cart_products) > 0)
-          @foreach($cart_products as $cart_product)
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -75,22 +73,12 @@
             </thead>
             <tbody>
               <tr>
-                <td ><h5 class="text-uppercase font-weight-bold" style="font-family: 'Old Standard TT',serif;">{{$cart_product->product_name}}</h5></td>
-                <td><img src='{{asset("$cart_product->thumb_picture")}}'  class="w-100" height="50" alt=""> </td>
-                <td>Ghc {{$cart_product->product_price}}</td>
+                <td ><h5 class="text-uppercase font-weight-bold" style="font-family: 'Old Standard TT',serif;">{{$cart_products->product_name}}</h5></td>
+                <td><img src='{{asset("$cart_products->thumb_picture")}}'  class="w-100" height="50" alt=""> </td>
+                <td>Ghc {{$cart_products->product_price}}</td>
               </tr>
             </tbody>
           </table>
-        @endforeach
-      @else
-        <div class="alert alert-info show" role="alert">
-          <strong>Alert!</strong> No Product Available In Your Cart. <a href="{{route('products')}}">Click Here</a> to add products
-        </div>
-
-      @endif
-        <div class="d-flex justify-content-end">
-          {{$cart_products->links()}}
-        </div>
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn-dark p-3">CHECKOUT</button>
         </div>
