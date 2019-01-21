@@ -109,5 +109,10 @@ class DashboardController extends Controller
         return $name;
     }
 
+    public function get_product_request(){
+      $requested_product = BuyProduct::orderBy('created_at','desc')->get();
+      return response()->json($requested_product);
+    }
+
 
 }

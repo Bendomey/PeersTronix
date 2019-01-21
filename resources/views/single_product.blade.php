@@ -61,7 +61,7 @@
       </p>
       <p class="pb-3" style="border-bottom: 1px solid #eee">{{$one_product->brief_description}}</p>
       <p class="my-3"><strong>Category :</strong>{{$one_product->product_category}} </p>
-      <a href='{{url("cart/$one_product->product_id")}}' class="btn btn-dark btn-lg rounded-0 p-3"><i class="fa fa-cart-arrow-down mr-1"></i>ADD TO CART</a>
+      <a href='{{url("checkout/$one_product->product_id")}}' class="btn btn-dark btn-lg "><i class="fa fa-cart-arrow-down mr-1"></i>BUY</a>
     </div>
   </div>
   <!-- description and reviews -->

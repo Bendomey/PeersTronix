@@ -67,4 +67,27 @@ $(document).ready(function(){
       $('#confirmDeleteBookingModal').modal('show')
     })
 
+    $.ajax({
+      type: 'Get',
+      url: '/requested_product',
+      dataType: 'JSON',
+      success: (data) =>{
+        for (var i = 0; i < data.length; i++) {
+          $('#buyernotification').append(`
+            <li>
+              <a href="{{route('dashboard/view_products')}}">
+                <div class="menu-info">
+                    <h4>${data[i]['buyer_name']} wants to buy ${data[i]['product_name']}</h4>
+                    <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
+                </div>
+              </a>
+            </li>
+            `);
+        }
+      },
+      error: ()=>{
+        alert('error');
+      }
+    })
+
 });

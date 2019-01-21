@@ -58,6 +58,7 @@ Route::group([],function(){
   Route::get('sortByProductRating','AjaxController@sortByProductRating')->name('sortByProductRating');
   Route::get('sortByPriceLowToHigh','AjaxController@sortByPriceLowToHigh')->name('sortByPriceLowToHigh');
   Route::get('sortByPriceHighToLow','AjaxController@sortByPriceHighToLow')->name('sortByPriceHighToLow');
+  Route::get('requested_product','DashboardController@get_product_request')->name('requested_product');
 
 });
 
