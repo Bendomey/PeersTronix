@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class Admin
+class Customer
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->isAdmin == 'admin'){
-            return $next($request);
-        }
-        return back()->withError('You do not have admin privveledges');
+      if(Auth::user()->isAdmin == 'user'){
+        return $next($request);
+      }
+      return back()->withError('You do not have customer proveledges');
     }
 }

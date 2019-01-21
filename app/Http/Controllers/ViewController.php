@@ -7,6 +7,9 @@ use App\Product;
 
 class ViewController extends Controller
 {
+  public function __construct(){
+    $this->Middleware('guest');
+  }
 
   public function index() {
     return view('index');
