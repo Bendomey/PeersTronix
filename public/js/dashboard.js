@@ -78,7 +78,7 @@ $(document).ready(function(){
               <a href="{{route('dashboard/view_products')}}">
                 <div class="menu-info">
                     <h4>${data[i]['buyer_name']} wants to buy ${data[i]['product_name']}</h4>
-                    <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
+                    <p><i class="zmdi zmdi-time"></i> ${data[i]['created_at']} </p>
                 </div>
               </a>
             </li>
