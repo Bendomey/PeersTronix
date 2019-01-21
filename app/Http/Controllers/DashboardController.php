@@ -92,7 +92,9 @@ class DashboardController extends Controller
     }
 
     public function update_profile_img(Request $request){
-      User::where('id',Auth::user()->id)->update([
+      $user = User::where('id',Auth::user()->id)->first();
+      unlink(Auth::user()->profile_img);
+      $user->update([
           'profile_img'=>$this->profileUpdate($request->profile_img),
       ]);
         return back()->with('success','Your Profile Picture was uploaded successfully');
@@ -102,8 +104,8 @@ class DashboardController extends Controller
     protected function profileUpdate($data){
         $user = user::where('id',Auth::user()->id)->first();
         $profile = md5(microtime());
-        Image::make($data)->save('profile_images/'. $profile .'.'.$data->getClientOriginalExtension());
         $name = 'profile_images/'. $profile .'.'.$data->getClientOriginalExtension();
+        Image::make($data)->save($name);
         return $name;
     }
 
