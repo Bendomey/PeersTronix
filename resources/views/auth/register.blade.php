@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="footer text-center">
-                        <button type="submit" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">SIGN UP</a>
+                        <button type="submit" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">SIGN UP</button>
                     </div>
                     <h6 class="m-t-20"><a class="link" href="{{route('login')}}">You already have a membership?</a></h6>
                 </form>
