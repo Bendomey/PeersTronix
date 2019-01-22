@@ -17,7 +17,7 @@
 </nav>
 <!-- End Navbar -->
 <div class="page-header">
-    <div class="page-header-image" style="background-image:url(images/imagescd60.jpg)"></div>
+    <div class="page-header-image" style="background-image:url({{asset('images/imagescd60.jpg')}})"></div>
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="footer text-center">
                         <button type="submit" class="btn l-cyan btn-round btn-lg btn-block waves-effect waves-light">SIGN IN</button>
-                        <h6 class="m-t-20"><a href="#" class="link">Forgot Password?</a></h6>
+                        <h6 class="m-t-20"><a href="{{url('password/reset')}}" class="link">Forgot Password?</a></h6>
                     </div>
                 </form>
             </div>
