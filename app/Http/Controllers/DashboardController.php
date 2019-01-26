@@ -93,7 +93,9 @@ class DashboardController extends Controller
 
     public function update_profile_img(Request $request){
       $user = User::where('id',Auth::user()->id)->first();
-      unlink(Auth::user()->profile_img);
+      if($user->profile_img =! null){
+          unlink($user->profile_img);
+      }
       $user->update([
           'profile_img'=>$this->profileUpdate($request->profile_img),
       ]);
